@@ -1,0 +1,20 @@
+IVS - Projekt 2
+Týmová spoluráce - Jednoduchá kalkulačka
+
+Tým Deus Vult!
+
+Křižáci:
+	* Vojtěch Ulej (xulejv00)
+	* Roman Fulla (xfulla00)
+	* Daniel Andraško (xandra05)
+	* Pavol Szepsi (xszeps00)
+
+Datum vydáni:
+
+###############################################################################
+###############################################################################
+
+Termíny:
+	* 12.3.	Založení repozitáře (https://github.com/OrenVo/IVS_proj2)
+	* 20.3. Odevzdání plánu
+	* 
