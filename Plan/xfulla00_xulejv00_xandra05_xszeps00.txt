@@ -1,20 +1,81 @@
 IVS - Projekt 2
 Týmová spoluráce - Jednoduchá kalkulačka
 
-Tým Deus Vult!
+Název týmu Deus Vult!
 
-Křižáci:
-	* Vojtěch Ulej (xulejv00)
+Křižáci (členové):
+	* Vojtěch Ulej (xulejv00) - Vedoucí projektu
 	* Roman Fulla (xfulla00)
 	* Daniel Andraško (xandra05)
 	* Pavol Szepsi (xszeps00)
 
-Datum vydáni:
+Datum vydání plánu: 19.3.2019
 
 ###############################################################################
 ###############################################################################
-
 Termíny:
 	* 12.3.	Založení repozitáře (https://github.com/OrenVo/IVS_proj2)
 	* 20.3. Odevzdání plánu
-	* 
+	* 30.3. Testy, makefile
+	* 1.4.	Základní implementace
+	* 5.4.	Rozšíření implementace o ostatní funkce
+	* 8.4.	GUI, ovládací prvky
+	* 10.4.	Profilling, dokumentace
+	* 14.4.	Manuál, nápověda, instalátor/odinstalátor
+	* 17.4. Doladění problémů, finální revize, mockup
+	* 24.4. Odevzdání finální verze
+	* 2.5. 	Odevzdání problémů
+	* TBA 	Instalace u zákazníka
+	* TBA	Obhajoba projektu
+
+###############################################################################
+
+Správa repozitáře - xulejv00
+ - kontrola repozitáře
+ - správa přístupu k repozitáři
+
+Správa komunikačních kanálů - xfulla00
+ - moderace komunikačního kanálu na Discordu
+
+Průběžná kontrola - xszeps00
+ - průběžné spouštění testů a kontrola zdrojových kódů (code review)
+
+Testování - xfulla00
+ - vytvoření testů
+ - úprava testů
+
+Makefile - xulejv00
+ - vytvoření, případná úprava
+
+Implementace - celý tým
+ - programování základnćh funkcí
+ - programování dodatečních funkcí
+
+GUI - xandra05
+ - vytvoření grafického uživatelského rozhraní
+ - návrh ovládacího rozhraní
+
+Profilling - xszeps00
+ - vytvoření programu
+ - průběžná kontrola výsledků a podávání zprávy ostatním členům týmu
+
+Instalátor - xszeps00
+ - tvorba instalátoru a odinstalátoru
+
+Dokumentace - xandra05
+ - tvorba, kontrola a korekce dokumentace
+
+Nápověda a manuál - xulejv00
+ - vytvoření nápovědy
+ - vytvoření uživatelského manuálu a návodu pro instalaci a odinstalaci
+
+Mockup - xandra05
+ - tvorba mockupu
+
+Prezentace - xfulla00
+ - vytvoření prezentace
+
+###############################################################################
+
+DISCLAIMER
+	Rozdělení úloh je předběžné, finální plnění úkolů se může lišit.
