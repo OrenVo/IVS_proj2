@@ -1,19 +1,19 @@
-Prostredi
----------
+Environments
+------------
 
 Ubuntu 64bit
 Windows 64bit
 
-Autori
-------
-
-Nazev tymu
-- xulejv00 Vojtěch Ulej 
-- xfulla00 Roman Fulla
-- xandra05 Daniel Andraško 
-- xszeps00 Pavol Szepsi
-
-Licence
+Authors
 -------
 
-Tento program je poskytovan pod licenci GNU GPL v.3
+Team Deus Vult!:
+  - Vojtěch Ulej (xulejv00)
+  - Roman Fulla (xfulla00)
+  - Daniel Andraško (xandra05)
+  - Pavol Szepsi (xszeps00)
+
+License
+-------
+
+This program is distributed under GNU GPL v.3 license

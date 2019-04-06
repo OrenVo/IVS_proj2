@@ -1,6 +1,6 @@
 # IVS_proj2
-Jednoduchá kalkulačka<p>
-Tým: 
+Basic calculator<p>
+Team:
   * Vojtěch Ulej
   * Roman Fulla
   * Daniel Andraško
