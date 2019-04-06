@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 """docstring for .deus_math_lib"""
 
+import math
+
 ##
 # @brief Function adds 2 numbers.
 #
@@ -10,7 +12,6 @@
 #
 # @return The sum of both parameters.
 def deus_sum(a, b):
-    """docstring for function deus_sum"""
     return a + b
 
 ##
@@ -21,7 +22,6 @@ def deus_sum(a, b):
 #
 # @return The difference of both parameters.
 def deus_sub(a, b):
-    """docstring for function sub"""
     return a - b
 
 ##
@@ -32,7 +32,6 @@ def deus_sub(a, b):
 #
 # @return The product of both parameters.
 def deus_mult(a, b):
-    """docstring for function mult"""
     return a * b
 
 ##
@@ -43,7 +42,6 @@ def deus_mult(a, b):
 #
 # @return The result of the division of parameters.
 def deus_div(a, b):
-    """docstring for function div"""
     return a / b
 
 ##
@@ -74,9 +72,9 @@ def deus_root(a, b):
 # @return The product of all positive integers less than or equal to fac (fac!).
 # @return -1 if an error occured.
 def deus_fact_rec(fac):
-	if fac < 0
-		return -1
-    if fac == 1 or fac == 0:
+    if fac < 0:
+        return -1
+    if fac in (0, 1):
         return 1
     return fac*deus_fact_rec(fac - 1)
 
@@ -88,8 +86,8 @@ def deus_fact_rec(fac):
 # @return The product of all positive integers less than or equal to fac (fac!).
 # @return -1 if an error occured.
 def deus_fact_ite(fac):
-	if fac < 0
-		return -1
+    if fac < 0:
+        return -1
     if fac == 0:
         return 1
     res = 1
@@ -105,7 +103,7 @@ def deus_fact_ite(fac):
 #
 # @return The logarithm of a with the base b.
 def deus_log(a,b):
-    return log(a,b)
+    return math.log(a,b)
 
 ##
 # @brief Function returns natural logarithm of x.
@@ -114,7 +112,7 @@ def deus_log(a,b):
 #
 # @return The logarithm of x with the base e(=~ 2.71828182846).
 def deus_ln(x):
-    return log(x)
+    return math.log(x)
 
 ##
 # @brief Function turns x into its absolute value.
