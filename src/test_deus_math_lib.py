@@ -1,4 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 import math
+import pytest
 import deus_math_lib
 
 # Need special attention '#':
@@ -121,12 +124,14 @@ def test_deus_root():
 def test_deus_fact_rec():
     assert deus_math_lib.deus_fact_rec(0) == 1
     assert deus_math_lib.deus_fact_rec(5) == 120
-    assert deus_math_lib.deus_fact_rec(10.5) == 11899423.084                #
+    with pytest.raises(ValueError):
+        deus_math_lib.deus_fact_rec(10.5)
 
 def test_deus_fact_ite():
     assert deus_math_lib.deus_fact_ite(0) == 1
     assert deus_math_lib.deus_fact_ite(5) == 120
-    assert deus_math_lib.deus_fact_ite(10.5) == 11899423.084                #
+    with pytest.raises(ValueError):
+        deus_math_lib.deus_fact_ite(10.5)
 
 def test_deus_log():
     assert math.isnan(deus_math_lib.deus_log(0, 10))                        #

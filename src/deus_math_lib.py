@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-"""docstring for .deus_math_lib"""
 
 import math
 
@@ -42,6 +41,8 @@ def deus_mult(a, b):
 #
 # @return The result of the division of parameters.
 def deus_div(a, b):
+    if b == 0:
+        return math.nan
     return a / b
 
 ##
@@ -52,6 +53,10 @@ def deus_div(a, b):
 #
 # @return a to the power of b (a^b).
 def deus_pow(a, b):
+    if b == 0:
+        return 1
+    if a == 0:
+        return 0
     return a ** b
 
 ##
@@ -62,7 +67,14 @@ def deus_pow(a, b):
 #
 # @return bth root of a number a.
 def deus_root(a, b):
-    return a ** (1 / b)
+    if b == 0:
+        return math.nan
+    if a == 0:
+        return 0
+    if a < 0 and (b % 2) == 0:
+        return math.nan
+    res = abs(a) ** (1.0 / b) * (-1 if a < 0 else 1)
+    return round(res)
 
 ##
 # @brief Function recursively calculates factorial.
@@ -72,8 +84,10 @@ def deus_root(a, b):
 # @return The product of all positive integers less than or equal to fac (fac!).
 # @return -1 if an error occured.
 def deus_fact_rec(fac):
+    if not isinstance(fac, int):
+        raise ValueError("Factorial must be integer")
     if fac < 0:
-        return -1
+        raise ValueError("Factorial must be positive value")
     if fac in (0, 1):
         return 1
     return fac*deus_fact_rec(fac - 1)
@@ -86,8 +100,10 @@ def deus_fact_rec(fac):
 # @return The product of all positive integers less than or equal to fac (fac!).
 # @return -1 if an error occured.
 def deus_fact_ite(fac):
+    if not isinstance(fac, int):
+        raise ValueError("Factorial must be integer")
     if fac < 0:
-        return -1
+        raise ValueError("Factorial must be positive value")
     if fac == 0:
         return 1
     res = 1
@@ -103,6 +119,8 @@ def deus_fact_ite(fac):
 #
 # @return The logarithm of a with the base b.
 def deus_log(a,b):
+    if a == 0:
+        return math.nan
     return math.log(a,b)
 
 ##
@@ -112,7 +130,12 @@ def deus_log(a,b):
 #
 # @return The logarithm of x with the base e(=~ 2.71828182846).
 def deus_ln(x):
-    return math.log(x)
+    try:
+        res = math.log(x)
+    except ValueError:
+        return math.nan
+    else:
+        return res
 
 ##
 # @brief Function turns x into its absolute value.
