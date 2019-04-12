@@ -1,7 +1,28 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+
+###############################################################################
+# @file deus_math_lib.py
+# @brief  Library of math functions for the Holy calculator.
+#
+# @authors Roman Fulla
+# @authors Vojtěch Ulej
+#
+# @version 0.3.0
+# @date 12.4.2019
+###############################################################################
+
+
 import math
+
+
+###############################################################################
+# @defgroup Basic Operations
+# @brief Most common math operations.
+# @{
+###############################################################################
+
 
 ##
 # @brief Function adds 2 numbers.
@@ -13,6 +34,7 @@ import math
 def deus_sum(a, b):
     return a + b
 
+
 ##
 # @brief Function subtracts b from a.
 #
@@ -22,6 +44,7 @@ def deus_sum(a, b):
 # @return The difference of both parameters.
 def deus_sub(a, b):
     return a - b
+
 
 ##
 # @brief Function multiplies 2 numbers.
@@ -33,6 +56,7 @@ def deus_sub(a, b):
 def deus_mult(a, b):
     return a * b
 
+
 ##
 # @brief Function divides a by b.
 #
@@ -40,10 +64,21 @@ def deus_mult(a, b):
 # @param b Divisor.
 #
 # @return The result of the division of parameters.
+# @return NaN (Not a number) if division by zero is attempted.
 def deus_div(a, b):
     if b == 0:
         return math.nan
     return a / b
+
+
+###############################################################################
+# @}
+#
+# @defgroup Advanced Operations
+# @brief Less common math operations.
+# @{
+###############################################################################
+
 
 ##
 # @brief Function calculates the a to the power of b.
@@ -59,13 +94,15 @@ def deus_pow(a, b):
         return 0
     return a ** b
 
+
 ##
-# @brief Function calculates the bth root of a number a.
+# @brief Function calculates the bth root of a.
 #
 # @param a Base.
 # @param b Degree.
 #
-# @return bth root of a number a.
+# @return bth root of a.
+# @return NaN (Not a number) if the result can't be calculated.
 def deus_root(a, b):
     if b == 0:
         return math.nan
@@ -76,13 +113,14 @@ def deus_root(a, b):
     res = abs(a) ** (1.0 / b) * (-1 if a < 0 else 1)
     return round(res)
 
+
 ##
 # @brief Function recursively calculates factorial.
+# @details Raises an exception if the fac isn't positve integer.
 #
-# @param fac Number from which the factorial will be calculated.
+# @param fac Positve integer from which the factorial will be calculated.
 #
-# @return The product of all positive integers less than or equal to fac (fac!).
-# @return -1 if an error occured.
+# @return The product of all positive integers less than or equal to fac(fac!).
 def deus_fact_rec(fac):
     if not isinstance(fac, int):
         raise ValueError("Factorial must be integer")
@@ -92,13 +130,14 @@ def deus_fact_rec(fac):
         return 1
     return fac*deus_fact_rec(fac - 1)
 
+
 ##
 # @brief Function iteratively calculates factorial.
+# @details Raises an exception if the fac isn't positve integer.
 #
-# @param fac Number from which the factorial will be calculated.
+# @param fac Positve integer from which the factorial will be calculated.
 #
-# @return The product of all positive integers less than or equal to fac (fac!).
-# @return -1 if an error occured.
+# @return The product of all positive integers less than or equal to fac(fac!).
 def deus_fact_ite(fac):
     if not isinstance(fac, int):
         raise ValueError("Factorial must be integer")
@@ -111,66 +150,83 @@ def deus_fact_ite(fac):
         res *= x_var
     return res
 
-##
-# @brief Function calculates the logarithm of a with the base b.
-#
-# @param a Real number.
-# @param b Base.
-#
-# @return The logarithm of a with the base b.
-def deus_log(a,b):
-    if a == 0:
-        return math.nan
-    return math.log(a,b)
 
 ##
-# @brief Function returns natural logarithm of x.
+# @brief Function calculates the logarithm of a to base b.
 #
-# @param x Real number.
+# @param a Positve real number.
+# @param b Base, positve real number (except 1).
 #
-# @return The logarithm of x with the base e(=~ 2.71828182846).
-def deus_ln(x):
-    try:
-        res = math.log(x)
-    except ValueError:
+# @return The logarithm of a to base b.
+# @return NaN (Not a number) if the result can't be calculated.
+def deus_log(a, b):
+    if a <= 0 or b <= 0 or b == 1:
         return math.nan
-    else:
-        return res
+    if b == math.e:
+        return math.log(a)
+    return math.log(a, b)
+
+
+###############################################################################
+# @}
+#
+# @defgroup Number Adjustments
+# @brief Simple number adjusting operations.
+# @{
+###############################################################################
+
 
 ##
-# @brief Function turns x into its absolute value.
+# @brief Function calculates abs absolute value.
 #
-# @param x Real number.
+# @param abs Real number.
 #
 # @return The absolute value of the parameter.
-def deus_abs(x):
-    if x < 0:
-        x = x * (-1)
-    return x
+def deus_abs(abs):
+    if abs < 0:
+        return -abs
+    return abs
+
 
 ##
-# @brief Function turns x into its percentage.
+# @brief Function calculates val percentage.
 #
-# @param x Real number.
+# @param val Real number.
 #
 # @return The percentage value of the parameter.
-def deus_percent(x):
-    return x / 100
+def deus_percent(val):
+    return val / 100
 
-# @brief Function turns x into its per mille.
+
+# @brief Function calculates val promille.
 #
-# @param x Real number.
+# @param val Real number.
 #
-# @return The per mille value of the parameter.
-def deus_permille(x):
-    return x / 1000
+# @return The promille value of the parameter.
+def deus_promille(val):
+    return val / 1000
+
+
+###############################################################################
+# @}
+#
+# @defgroup Constants
+# @brief Operations returning constant value.
+#
+# @details deus_rnd() returns variable.
+# @see deus_rnd()
+#
+# @{
+###############################################################################
+
 
 ##
-# @brief Function returns 0.
+# @brief Function returns zero.
 #
 # @return 0.
 def deus_clear():
     return 0
+
 
 ##
 # @brief Function returns Euler's number.
@@ -179,6 +235,7 @@ def deus_clear():
 def deus_e():
     return math.e
 
+
 ##
 # @brief Function returns Pi.
 #
@@ -186,9 +243,24 @@ def deus_e():
 def deus_pi():
     return math.pi
 
+
+##
+# @brief Function returns random value.
+#
+# @return Pseudorandom number.
+def deus_rnd():
+    from random import randint
+    return randint(-666, 1000)
+
+
 ##
 # Super secret hidden function,
 # which returns the answer to life,
 # the universe and everything!
 def deus_vult():
     return 42
+
+###############################################################################
+# @}
+# End of the deus_math_lib.py
+###############################################################################

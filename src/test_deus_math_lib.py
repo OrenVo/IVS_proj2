@@ -1,19 +1,28 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
+
+###############################################################################
+# File: test_deus_math_lib.py
+# Description: Tests of the library of math functions for the Holy calculator
+#
+# Author: Roman Fulla
+# Author: Vojtěch Ulej
+#
+# Version: 1.0.0
+# Date: 12.4.2019
+###############################################################################
+
+
 import math
 import pytest
 import deus_math_lib
 
-# Need special attention '#':
-#  Desatinne mocniny
-#
-#  Odmocniny z negativnych cisel
-#  Odmocniny z 0
-#  0tá odmocnina
-#
-#  Faktoriál - vždy kladné (a celé?)
-#
-#  Logaritmus - vždy kladný a nenulový
+
+###############################################################################
+# Tests of the basic operations
+###############################################################################
+
 
 def test_deus_sum():
     assert deus_math_lib.deus_sum(-99999, -66666) == -166665
@@ -32,6 +41,7 @@ def test_deus_sum():
     assert deus_math_lib.deus_sum(4096, 0) == 4096
     assert deus_math_lib.deus_sum(99999, -66666) == 33333
 
+
 def test_deus_sub():
     assert deus_math_lib.deus_sub(-2805, -1999) == -806
     assert deus_math_lib.deus_sub(-500, 0) == -500
@@ -48,6 +58,7 @@ def test_deus_sub():
     assert deus_math_lib.deus_sub(420, 4.2) == 415.8
     assert deus_math_lib.deus_sub(500, 0) == 500
     assert deus_math_lib.deus_sub(2805, -1999) == 4804
+
 
 def test_deus_mult():
     assert deus_math_lib.deus_mult(-5000, -100) == 500000
@@ -66,27 +77,34 @@ def test_deus_mult():
     assert deus_math_lib.deus_mult(4000, 0) == 0
     assert deus_math_lib.deus_mult(5000, -100) == -500000
 
+
 def test_deus_div():
     assert deus_math_lib.deus_div(-10000, -8) == 1250
-    assert math.isnan(deus_math_lib.deus_div(-50, 0))                       #
+    assert math.isnan(deus_math_lib.deus_div(-50, 0))
     assert deus_math_lib.deus_div(-20, 0.25) == -80
     assert deus_math_lib.deus_div(-10, 2) == -5
 
     assert deus_math_lib.deus_div(0, -50) == 0
     assert deus_math_lib.deus_div(0, -0.5) == 0
-    assert math.isnan(deus_math_lib.deus_div(0, 0))                         #
+    assert math.isnan(deus_math_lib.deus_div(0, 0))
     assert deus_math_lib.deus_div(0, 0.5) == 0
     assert deus_math_lib.deus_div(0, 50) == 0
 
     assert deus_math_lib.deus_div(10, 2) == 5
     assert deus_math_lib.deus_div(20, 0.25) == 80
-    assert math.isnan(deus_math_lib.deus_div(50, 0))                        #
+    assert math.isnan(deus_math_lib.deus_div(50, 0))
     assert deus_math_lib.deus_div(10000, -8) == -1250
+
+
+###############################################################################
+# Tests of the advanced operations
+###############################################################################
+
 
 def test_deus_pow():
     assert deus_math_lib.deus_pow(-4, -2) == 0.0625
     assert deus_math_lib.deus_pow(-4, 0) == 1
-    #assert deus_math_lib.deus_pow(-4,0.5) == 2i                            #
+    # assert deus_math_lib.deus_pow(-4,0.5) == 2i
     assert deus_math_lib.deus_pow(-4, 3) == -64
     assert deus_math_lib.deus_pow(-4, 2) == 16
 
@@ -102,51 +120,85 @@ def test_deus_pow():
     assert deus_math_lib.deus_pow(4, 0) == 1
     assert deus_math_lib.deus_pow(4, -2) == 0.0625
 
-def test_deus_root():
-    #assert deus_math_lib.deus_root(-15625,-3) == 0.02 - 0.0346410162i      #
-    assert math.isnan(deus_math_lib.deus_root(-15625, 0))                   #
-    assert deus_math_lib.deus_root(-15625, 0.5) == 244140625                #
-    assert deus_math_lib.deus_root(-15625, 3) == -25                        #
-    #assert deus_math_lib.deus_root(-15625,2) == 125i                       #
 
-    assert math.isnan(deus_math_lib.deus_root(0, -8))                       #
-    assert math.isnan(deus_math_lib.deus_root(0, -0.5))                     #
-    assert math.isnan(deus_math_lib.deus_root(0, 0))                        #
+def test_deus_root():
+    # assert deus_math_lib.deus_root(-15625,-3) == 0.02 - 0.0346410162i
+    assert math.isnan(deus_math_lib.deus_root(-15625, 0))
+    assert deus_math_lib.deus_root(-15625, 0.5) == 244140625
+    assert deus_math_lib.deus_root(-15625, 3) == -25
+    # assert deus_math_lib.deus_root(-15625,2) == 125i
+
+    assert math.isnan(deus_math_lib.deus_root(0, -8))
+    assert math.isnan(deus_math_lib.deus_root(0, -0.5))
+    assert math.isnan(deus_math_lib.deus_root(0, 0))
     assert deus_math_lib.deus_root(0, 0.5) == 0
     assert deus_math_lib.deus_root(0, 8) == 0
 
     assert deus_math_lib.deus_root(15625, 2) == 125
     assert deus_math_lib.deus_root(15625, 3) == 25
     assert deus_math_lib.deus_root(15625, 0.5) == 244140625
-    assert math.isnan(deus_math_lib.deus_root(15625, 0))                    #
+    assert math.isnan(deus_math_lib.deus_root(15625, 0))
     assert deus_math_lib.deus_root(15625, -3) == 0.04
 
+
 def test_deus_fact_rec():
+    with pytest.raises(ValueError):
+        deus_math_lib.deus_fact_rec(-10.5)
+    with pytest.raises(ValueError):
+        deus_math_lib.deus_fact_rec(-5)
+
     assert deus_math_lib.deus_fact_rec(0) == 1
+
     assert deus_math_lib.deus_fact_rec(5) == 120
     with pytest.raises(ValueError):
         deus_math_lib.deus_fact_rec(10.5)
 
+
 def test_deus_fact_ite():
+    with pytest.raises(ValueError):
+        deus_math_lib.deus_fact_ite(-10.5)
+    with pytest.raises(ValueError):
+        deus_math_lib.deus_fact_ite(-5)
+
     assert deus_math_lib.deus_fact_ite(0) == 1
+
     assert deus_math_lib.deus_fact_ite(5) == 120
     with pytest.raises(ValueError):
         deus_math_lib.deus_fact_ite(10.5)
 
+
 def test_deus_log():
-    assert math.isnan(deus_math_lib.deus_log(0, 10))                        #
-    assert deus_math_lib.deus_log(0.25, 2) == -2
+    assert math.isnan(deus_math_lib.deus_log(-5, 10))
+    assert math.isnan(deus_math_lib.deus_log(-3.5, 5))
+
+    assert math.isnan(deus_math_lib.deus_log(0, 0))
+    assert math.isnan(deus_math_lib.deus_log(0, 1))
+    assert math.isnan(deus_math_lib.deus_log(0, 10))
+
     assert deus_math_lib.deus_log(1, 100) == 0
+    assert math.isnan(deus_math_lib.deus_log(1, 1))
+
+    assert deus_math_lib.deus_log(0.25, 2) == -2
     assert deus_math_lib.deus_log(2, 0.25) == -0.5
+
     assert deus_math_lib.deus_log(10, 10) == 1
     assert deus_math_lib.deus_log(10, 100) == 0.5
     assert deus_math_lib.deus_log(100, 10) == 2
 
-def test_deus_ln():
-    assert math.isnan(deus_math_lib.deus_ln(0))                             #
-    assert deus_math_lib.deus_ln(0.5) == math.log(0.5)
-    assert deus_math_lib.deus_ln(1) == 0
-    assert deus_math_lib.deus_ln(5) == math.log(5)
+    assert math.isnan(deus_math_lib.deus_log(500, 0))
+    assert math.isnan(deus_math_lib.deus_log(1000, -5))
+    assert math.isnan(deus_math_lib.deus_log(1000, -3.5))
+
+    assert math.isnan(deus_math_lib.deus_log(0, math.e))
+    assert deus_math_lib.deus_log(0.5, math.e) == math.log(0.5)
+    assert deus_math_lib.deus_log(1, math.e) == 0
+    assert deus_math_lib.deus_log(5, math.e) == math.log(5)
+
+
+###############################################################################
+# Tests of the number adjustments
+###############################################################################
+
 
 def test_deus_abs():
     assert deus_math_lib.deus_abs(-96969) == 96969
@@ -159,6 +211,7 @@ def test_deus_abs():
     assert deus_math_lib.deus_abs(10) == 10
     assert deus_math_lib.deus_abs(96969) == 96969
 
+
 def test_deus_percent():
     assert deus_math_lib.deus_percent(-999999) == -9999.99
     assert deus_math_lib.deus_percent(-128) == -1.28
@@ -170,22 +223,44 @@ def test_deus_percent():
     assert deus_math_lib.deus_percent(128) == 1.28
     assert deus_math_lib.deus_percent(999999) == 9999.99
 
-def test_deus_permille():
-    assert deus_math_lib.deus_permille(-20042001) == -20042.001
-    assert deus_math_lib.deus_permille(-1024) == -1.024
-    assert deus_math_lib.deus_permille(-100.5) == -0.1005
 
-    assert deus_math_lib.deus_permille(0) == 0
+def test_deus_promille():
+    assert deus_math_lib.deus_promille(-20042001) == -20042.001
+    assert deus_math_lib.deus_promille(-1024) == -1.024
+    assert deus_math_lib.deus_promille(-100.5) == -0.1005
 
-    assert deus_math_lib.deus_permille(100.5) == 0.1005
-    assert deus_math_lib.deus_permille(1024) == 1.024
-    assert deus_math_lib.deus_permille(20042001) == 20042.001
+    assert deus_math_lib.deus_promille(0) == 0
+
+    assert deus_math_lib.deus_promille(100.5) == 0.1005
+    assert deus_math_lib.deus_promille(1024) == 1.024
+    assert deus_math_lib.deus_promille(20042001) == 20042.001
+
+
+###############################################################################
+# Tests of the constants
+###############################################################################
+
+
+def test_deus_clear():
+    assert deus_math_lib.deus_clear() == 0
+
 
 def test_deus_e():
     assert deus_math_lib.deus_e() == math.e
 
+
 def test_deus_pi():
     assert deus_math_lib.deus_pi() == math.pi
 
+
+def test_deus_rnd():
+    assert deus_math_lib.deus_rnd() != deus_math_lib.deus_rnd()
+
+
 def test_deus_vult():
     assert deus_math_lib.deus_vult() == 42
+
+
+###############################################################################
+# End of the test_deus_math_lib.py
+###############################################################################
