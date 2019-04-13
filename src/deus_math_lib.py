@@ -15,6 +15,7 @@
 
 
 import math
+from random import randint
 
 
 ###############################################################################
@@ -106,12 +107,24 @@ def deus_pow(a, b):
 def deus_root(a, b):
     if b == 0:
         return math.nan
-    if a == 0:
+    if a == 0 and b > 0:
         return 0
+    if a == 0 and b < 0:
+        return math.nan
     if a < 0 and (b % 2) == 0:
         return math.nan
-    res = abs(a) ** (1.0 / b) * (-1 if a < 0 else 1)
-    return round(res)
+    try:
+        res = math.pow(a, 1.0/b)
+    except ValueError:
+        try:
+            res = math.pow(abs(a), 1.0/b)
+            res = round(res, 10) * (-1)
+            return res
+        except:
+            return math.nan
+    else:
+        return round(res, 10)
+
 
 
 ##
@@ -160,11 +173,15 @@ def deus_fact_ite(fac):
 # @return The logarithm of a to base b.
 # @return NaN (Not a number) if the result can't be calculated.
 def deus_log(a, b):
-    if a <= 0 or b <= 0 or b == 1:
+    try:
+        if b == math.e:
+            res = math.log(a)
+        else:
+            res = math.log(a, b)
+    except:
         return math.nan
-    if b == math.e:
-        return math.log(a)
-    return math.log(a, b)
+    else:
+        return res
 
 
 ###############################################################################
@@ -249,7 +266,6 @@ def deus_pi():
 #
 # @return Pseudorandom number.
 def deus_rnd():
-    from random import randint
     return randint(-666, 1000)
 
 
