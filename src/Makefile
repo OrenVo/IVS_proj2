@@ -15,3 +15,7 @@ clean:
 	rmdir /Q /S ".pytest_cache" "__pycache__" 
 
 pack:
+
+doc:
+	cd .. && rm -rf /doc
+	doxygen
