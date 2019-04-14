@@ -21,10 +21,8 @@
 double StandardDeviation(char *file) {
 	FILE *pFile;
 	pFile = fopen(file, "r");
-	if (pFile == NULL) {
-		fprintf(stderr,"File couldn't be opened!\n");
+	if (pFile == NULL)
 		return 1;
-	}
 
 	double x, avgX;
 	double sumX = 0;
@@ -39,8 +37,7 @@ double StandardDeviation(char *file) {
 	fclose(pFile);
 
 	avgX = sumX / N;
-	double y = 1.0 / (N - 1);
-	return sqrt(y * (sumX2 - (N * pow(avgX, 2))));
+	return sqrt(1.0 / (N - 1) * (sumX2 - (N * pow(avgX, 2))));
 }
 
 /**
@@ -50,23 +47,30 @@ double StandardDeviation(char *file) {
 * @param argv[] Array of arguments.
 *
 * @return 0 - Program finished successfully.
-
 * @return 1 - error - File couldn't be opened!
-* @return 2 - error - Need filename as an first argument!
+* @return 2 - error - Need filename as the first argument!
 * @return 3 - error - Too many arguments!
 */
 int main(int argc, char *argv[]) {
 	if (argc == 1) {
-		fprintf(stderr,"Need filename as an first argument!\n");
+		fprintf(stderr, "Need filename as the first argument!\n");
 		return 2;
 	}
 
 	if (argc > 2) {
-		fprintf(stderr,"Too many arguments!\n");
+		fprintf(stderr, "Too many arguments!\n");
 		return 3;
 	}
 
-	/*if (printf("%lf\n", StandardDeviation(argv[1])) == 1) return 1 alebo tak nejak*/
-	printf("%lf\n", StandardDeviation(argv[1]));
+	if (StandardDeviation(argv[1]) == 1) {
+        fprintf(stderr, "File couldn't be opened!\n");
+        return 1;
+	}
+
+    printf("%lf\n", StandardDeviation(argv[1]));
 	return 0;
 }
+
+/**
+* @}
+*/
