@@ -3,14 +3,14 @@
 
 
 ###############################################################################
-# File: test_deus_math_lib.py
-# Description: Tests of the library of math functions for the Holy calculator
+# @file test_deus_math_lib.py
+# @brief Tests of the library of math functions for the Holy calculator
 #
-# Author: Roman Fulla
-# Author: Vojtěch Ulej
+# @authors Roman Fulla
+# @authors Vojtěch Ulej
 #
-# Version: 1.0.0
-# Date: 12.4.2019
+# @version 1.0.1
+# @date 12.4.2019
 ###############################################################################
 
 
@@ -20,7 +20,9 @@ import deus_math_lib
 
 
 ###############################################################################
-# Tests of the basic operations
+# @defgroup BASICTESTS Basic Operations Tests
+# @brief Tests of the basic operations.
+# @{
 ###############################################################################
 
 
@@ -97,7 +99,10 @@ def test_deus_div():
 
 
 ###############################################################################
-# Tests of the advanced operations
+# @}
+# @defgroup ADVANCEDTESTS Advanced Operations Tests
+# @brief Tests of the advanced operations.
+# @{
 ###############################################################################
 
 
@@ -196,7 +201,10 @@ def test_deus_log():
 
 
 ###############################################################################
-# Tests of the number adjustments
+# @}
+# @defgroup NADJUSTMENTSTESTS Number Adjusting Operations Tests
+# @brief Tests of the number adjustments.
+# @{
 ###############################################################################
 
 
@@ -237,7 +245,10 @@ def test_deus_promille():
 
 
 ###############################################################################
-# Tests of the constants
+# @}
+# @defgroup CONSTATNTSTESTS Constants Tests
+# @brief Tests of the constants.
+# @{
 ###############################################################################
 
 
@@ -262,5 +273,6 @@ def test_deus_vult():
 
 
 ###############################################################################
+# @}
 # End of the test_deus_math_lib.py
 ###############################################################################

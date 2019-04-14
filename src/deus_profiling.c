@@ -12,11 +12,11 @@
 # include <math.h>
 
 /**
-* @brief Function calculates standard deviation.
+* @brief Function calculating standard deviation.
 *
-* @param file Input file with numbers.
+* @param file Input file with numbers
 *
-* @return Standard deviation of numbers from input.
+* @return Standard deviation of numbers from input
 */
 double StandardDeviation(char *file) {
 	FILE *pFile;
@@ -41,29 +41,29 @@ double StandardDeviation(char *file) {
 }
 
 /**
-* @brief Main function calling.
+* @brief Main function.
 *
-* @param argc Number of arguments.
-* @param argv[] Array of arguments.
+* @param argc Number of arguments
+* @param argv[] Array of arguments
 *
-* @return 0 - Program finished successfully.
-* @return 1 - error - File couldn't be opened!
-* @return 2 - error - Need filename as the first argument!
-* @return 3 - error - Too many arguments!
+* @return 0 - Program finished successfully
+* @return 1 - error - File couldn't be opened
+* @return 2 - error - Need filename as the first argument
+* @return 3 - error - Too many arguments
 */
 int main(int argc, char *argv[]) {
 	if (argc == 1) {
-		fprintf(stderr, "Need filename as the first argument!\n");
+		fprintf(stderr, "Need filename as the first argument\n");
 		return 2;
 	}
 
 	if (argc > 2) {
-		fprintf(stderr, "Too many arguments!\n");
+		fprintf(stderr, "Too many arguments\n");
 		return 3;
 	}
 
 	if (StandardDeviation(argv[1]) == 1) {
-        fprintf(stderr, "File couldn't be opened!\n");
+        fprintf(stderr, "File couldn't be opened\n");
         return 1;
 	}
 
@@ -72,5 +72,5 @@ int main(int argc, char *argv[]) {
 }
 
 /**
-* @}
-*/
+ * End of the deus_profiling.c
+ */

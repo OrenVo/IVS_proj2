@@ -9,8 +9,8 @@
 # @authors Roman Fulla
 # @authors Vojtěch Ulej
 #
-# @version 0.3.2
-# @date 14.4.2019
+# @version 1.0.0
+# @date 15.4.2019
 ###############################################################################
 
 
@@ -20,7 +20,7 @@ from random import randint
 
 ###############################################################################
 # @defgroup BASIC Basic Operations
-# @brief Most common math operations.
+# @brief Most basic math operations.
 # @{
 ###############################################################################
 
@@ -28,10 +28,10 @@ from random import randint
 ##
 # @brief Function adds 2 numbers.
 #
-# @param a First addend.
-# @param b Second addend.
+# @param a First addend
+# @param b Second addend
 #
-# @return The sum of both parameters.
+# @return The sum of both parameters
 def deus_sum(a, b):
     return a + b
 
@@ -39,10 +39,10 @@ def deus_sum(a, b):
 ##
 # @brief Function subtracts b from a.
 #
-# @param a Minuend.
-# @param b Subtrahend.
+# @param a Minuend
+# @param b Subtrahend
 #
-# @return The difference of both parameters.
+# @return The difference of both parameters
 def deus_sub(a, b):
     return a - b
 
@@ -50,10 +50,10 @@ def deus_sub(a, b):
 ##
 # @brief Function multiplies 2 numbers.
 #
-# @param a First factor.
-# @param b Second factor.
+# @param a First factor
+# @param b Second factor
 #
-# @return The product of both parameters.
+# @return The product of both parameters
 def deus_mult(a, b):
     return a * b
 
@@ -61,11 +61,11 @@ def deus_mult(a, b):
 ##
 # @brief Function divides a by b.
 #
-# @param a Dividend.
-# @param b Divisor.
+# @param a Dividend
+# @param b Divisor
 #
-# @return The result of the division of parameters.
-# @return NaN (Not a number) if division by zero is attempted.
+# @return The result of the division of parameters
+# @return NaN (Not a number) if division by zero is attempted
 def deus_div(a, b):
     if b == 0:
         return math.nan
@@ -76,7 +76,7 @@ def deus_div(a, b):
 # @}
 #
 # @defgroup ADVANCED Advanced Operations
-# @brief Less common math operations.
+# @brief More advanced math operations.
 # @{
 ###############################################################################
 
@@ -84,10 +84,10 @@ def deus_div(a, b):
 ##
 # @brief Function calculates the a to the power of b.
 #
-# @param a Base.
-# @param b Exponent.
+# @param a Base
+# @param b Exponent
 #
-# @return a to the power of b (a^b).
+# @return a to the power of b (a^b)
 def deus_pow(a, b):
     if b == 0:
         return 1
@@ -99,11 +99,11 @@ def deus_pow(a, b):
 ##
 # @brief Function calculates the bth root of a.
 #
-# @param a Base.
-# @param b Degree.
+# @param a Base
+# @param b Degree
 #
-# @return bth root of a.
-# @return NaN (Not a number) if the result can't be calculated.
+# @return bth root of a
+# @return NaN (Not a number) if the result can't be calculated
 def deus_root(a, b):
     if b == 0:
         return math.nan
@@ -130,9 +130,9 @@ def deus_root(a, b):
 # @brief Function recursively calculates factorial.
 # @details Raises an exception if the fac isn't positve integer.
 #
-# @param fac Positve integer from which the factorial will be calculated.
+# @param fac Positve integer from which the factorial will be calculated
 #
-# @return The product of all positive integers less than or equal to fac(fac!).
+# @return The product of all positive integers less than or equal to fac(fac!)
 def deus_fact_rec(fac):
     if not isinstance(fac, int):
         raise ValueError("Factorial must be integer!")
@@ -147,9 +147,9 @@ def deus_fact_rec(fac):
 # @brief Function iteratively calculates factorial.
 # @details Raises an exception if the fac isn't positve integer.
 #
-# @param fac Positve integer from which the factorial will be calculated.
+# @param fac Positve integer from which the factorial will be calculated
 #
-# @return The product of all positive integers less than or equal to fac(fac!).
+# @return The product of all positive integers less than or equal to fac(fac!)
 def deus_fact_ite(fac):
     if not isinstance(fac, int):
         raise ValueError("Factorial must be integer!")
@@ -166,11 +166,11 @@ def deus_fact_ite(fac):
 ##
 # @brief Function calculates the logarithm of a to base b.
 #
-# @param a Positve real number.
-# @param b Base, positve real number (except 1).
+# @param a Positve real number
+# @param b Base, positve real number (except 1)
 #
-# @return The logarithm of a to base b.
-# @return NaN (Not a number) if the result can't be calculated.
+# @return The logarithm of a to base b
+# @return NaN (Not a number) if the result can't be calculated
 def deus_log(a, b):
     try:
         if b == math.e:
@@ -195,9 +195,9 @@ def deus_log(a, b):
 ##
 # @brief Function calculates abs absolute value.
 #
-# @param abs Real number.
+# @param abs Real number
 #
-# @return The absolute value of the parameter.
+# @return The absolute value of the parameter
 def deus_abs(abs):
     if abs < 0:
         return -abs
@@ -207,18 +207,19 @@ def deus_abs(abs):
 ##
 # @brief Function calculates val percentage.
 #
-# @param val Real number.
+# @param val Real number
 #
-# @return The percentage value of the parameter.
+# @return The percentage value of the parameter
 def deus_percent(val):
     return val / 100
 
 
+##
 # @brief Function calculates val promille.
 #
-# @param val Real number.
+# @param val Real number
 #
-# @return The promille value of the parameter.
+# @return The promille value of the parameter
 def deus_promille(val):
     return val / 1000
 
@@ -228,8 +229,7 @@ def deus_promille(val):
 #
 # @defgroup CONSTATNTS Constants
 # @brief Operations returning constant value.
-#
-# @details deus_rnd() returns variable.
+# @details Random returns variable - see: deus_rnd()
 #
 # @{
 ###############################################################################
@@ -238,7 +238,7 @@ def deus_promille(val):
 ##
 # @brief Function returns zero.
 #
-# @return 0.
+# @return 0
 def deus_clear():
     return 0
 
@@ -246,7 +246,7 @@ def deus_clear():
 ##
 # @brief Function returns Euler's number.
 #
-# @return e (=~ 2.71828182846).
+# @return e (=~ 2.71828182846)
 def deus_e():
     return math.e
 
@@ -254,7 +254,7 @@ def deus_e():
 ##
 # @brief Function returns Pi.
 #
-# @return Pi (=~ 3.14159265359).
+# @return Pi (=~ 3.14159265359)
 def deus_pi():
     return math.pi
 
@@ -262,7 +262,7 @@ def deus_pi():
 ##
 # @brief Function returns random value.
 #
-# @return Pseudorandom number.
+# @return Pseudorandom number
 def deus_rnd():
     return randint(-666, 1000)
 
