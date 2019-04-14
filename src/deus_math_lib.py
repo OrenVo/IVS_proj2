@@ -9,8 +9,8 @@
 # @authors Roman Fulla
 # @authors Vojtěch Ulej
 #
-# @version 0.3.0
-# @date 12.4.2019
+# @version 0.3.2
+# @date 14.4.2019
 ###############################################################################
 
 
@@ -19,7 +19,7 @@ from random import randint
 
 
 ###############################################################################
-# @defgroup Basic Operations
+# @defgroup BASIC Basic Operations
 # @brief Most common math operations.
 # @{
 ###############################################################################
@@ -75,7 +75,7 @@ def deus_div(a, b):
 ###############################################################################
 # @}
 #
-# @defgroup Advanced Operations
+# @defgroup ADVANCED Advanced Operations
 # @brief Less common math operations.
 # @{
 ###############################################################################
@@ -118,13 +118,12 @@ def deus_root(a, b):
     except ValueError:
         try:
             res = math.pow(abs(a), 1.0/b)
-            res = round(res, 10) * (-1)
-            return res
+            res = round(res, 10)
+            return -res
         except:
             return math.nan
     else:
         return round(res, 10)
-
 
 
 ##
@@ -136,9 +135,9 @@ def deus_root(a, b):
 # @return The product of all positive integers less than or equal to fac(fac!).
 def deus_fact_rec(fac):
     if not isinstance(fac, int):
-        raise ValueError("Factorial must be integer")
+        raise ValueError("Factorial must be integer!")
     if fac < 0:
-        raise ValueError("Factorial must be positive value")
+        raise ValueError("Factorial must be positive value!")
     if fac in (0, 1):
         return 1
     return fac*deus_fact_rec(fac - 1)
@@ -153,9 +152,9 @@ def deus_fact_rec(fac):
 # @return The product of all positive integers less than or equal to fac(fac!).
 def deus_fact_ite(fac):
     if not isinstance(fac, int):
-        raise ValueError("Factorial must be integer")
+        raise ValueError("Factorial must be integer!")
     if fac < 0:
-        raise ValueError("Factorial must be positive value")
+        raise ValueError("Factorial must be positive value!")
     if fac == 0:
         return 1
     res = 1
@@ -187,7 +186,7 @@ def deus_log(a, b):
 ###############################################################################
 # @}
 #
-# @defgroup Number Adjustments
+# @defgroup ADJUSTMENTS Number Adjustments
 # @brief Simple number adjusting operations.
 # @{
 ###############################################################################
@@ -227,11 +226,10 @@ def deus_promille(val):
 ###############################################################################
 # @}
 #
-# @defgroup Constants
+# @defgroup CONSTATNTS Constants
 # @brief Operations returning constant value.
 #
 # @details deus_rnd() returns variable.
-# @see deus_rnd()
 #
 # @{
 ###############################################################################
@@ -273,8 +271,9 @@ def deus_rnd():
 # Super secret hidden function,
 # which returns the answer to life,
 # the universe and everything!
-def deus_vult():
+deus_vult():
     return 42
+
 
 ###############################################################################
 # @}
