@@ -6,11 +6,11 @@
 # @file test_deus_math_lib.py
 # @brief Tests of the library of math functions for the Holy calculator
 #
-# @authors Roman Fulla
-# @authors Vojtěch Ulej
+# @authors Roman Fulla (Xfulla00)
+# @authors Vojtěch Ulej (xulejv00)
 #
-# @version 1.0.1
-# @date 12.4.2019
+# @version 1.0.2
+# @date 15.4.2019
 ###############################################################################
 
 
@@ -26,6 +26,8 @@ import deus_math_lib
 ###############################################################################
 
 
+##
+# @brief Tests of the sum function - see: deus_sum()
 def test_deus_sum():
     assert deus_math_lib.deus_sum(-99999, -66666) == -166665
     assert deus_math_lib.deus_sum(-4096, 0) == -4096
@@ -44,6 +46,8 @@ def test_deus_sum():
     assert deus_math_lib.deus_sum(99999, -66666) == 33333
 
 
+##
+# @brief Tests of the subtract function - see: deus_sub()
 def test_deus_sub():
     assert deus_math_lib.deus_sub(-2805, -1999) == -806
     assert deus_math_lib.deus_sub(-500, 0) == -500
@@ -62,6 +66,8 @@ def test_deus_sub():
     assert deus_math_lib.deus_sub(2805, -1999) == 4804
 
 
+##
+# @brief Tests of the multiply function - see: deus_mult()
 def test_deus_mult():
     assert deus_math_lib.deus_mult(-5000, -100) == 500000
     assert deus_math_lib.deus_mult(-4000, 0) == 0
@@ -80,6 +86,8 @@ def test_deus_mult():
     assert deus_math_lib.deus_mult(5000, -100) == -500000
 
 
+##
+# @brief Tests of the divide function - see: deus_div()
 def test_deus_div():
     assert deus_math_lib.deus_div(-10000, -8) == 1250
     assert math.isnan(deus_math_lib.deus_div(-50, 0))
@@ -106,6 +114,8 @@ def test_deus_div():
 ###############################################################################
 
 
+##
+# @brief Tests of the power function - see: deus_pow()
 def test_deus_pow():
     assert deus_math_lib.deus_pow(-4, -2) == 0.0625
     assert deus_math_lib.deus_pow(-4, 0) == 1
@@ -126,6 +136,8 @@ def test_deus_pow():
     assert deus_math_lib.deus_pow(4, -2) == 0.0625
 
 
+##
+# @brief Tests of the root function - see: deus_root()
 def test_deus_root():
     # assert deus_math_lib.deus_root(-15625,-3) == 0.02 - 0.0346410162i
     assert math.isnan(deus_math_lib.deus_root(-15625, 0))
@@ -146,6 +158,8 @@ def test_deus_root():
     assert deus_math_lib.deus_root(15625, -3) == 0.04
 
 
+##
+# @brief Tests of the recursive factorial function - see: deus_fact_rec()
 def test_deus_fact_rec():
     with pytest.raises(ValueError):
         deus_math_lib.deus_fact_rec(-10.5)
@@ -159,6 +173,8 @@ def test_deus_fact_rec():
         deus_math_lib.deus_fact_rec(10.5)
 
 
+##
+# @brief Tests of the iterative factorial function - see: deus_fact_ite()
 def test_deus_fact_ite():
     with pytest.raises(ValueError):
         deus_math_lib.deus_fact_ite(-10.5)
@@ -172,6 +188,8 @@ def test_deus_fact_ite():
         deus_math_lib.deus_fact_ite(10.5)
 
 
+##
+# @brief Tests of the logarithm function - see: deus_log()
 def test_deus_log():
     assert math.isnan(deus_math_lib.deus_log(-5, 10))
     assert math.isnan(deus_math_lib.deus_log(-3.5, 5))
@@ -208,6 +226,8 @@ def test_deus_log():
 ###############################################################################
 
 
+##
+# @brief Tests of the absolute function - see: deus_abs()
 def test_deus_abs():
     assert deus_math_lib.deus_abs(-96969) == 96969
     assert deus_math_lib.deus_abs(-10) == 10
@@ -220,6 +240,8 @@ def test_deus_abs():
     assert deus_math_lib.deus_abs(96969) == 96969
 
 
+##
+# @brief Tests of the percentage function - see: deus_percent()
 def test_deus_percent():
     assert deus_math_lib.deus_percent(-999999) == -9999.99
     assert deus_math_lib.deus_percent(-128) == -1.28
@@ -232,6 +254,8 @@ def test_deus_percent():
     assert deus_math_lib.deus_percent(999999) == 9999.99
 
 
+##
+# @brief Tests of the promille function - see: deus_promille()
 def test_deus_promille():
     assert deus_math_lib.deus_promille(-20042001) == -20042.001
     assert deus_math_lib.deus_promille(-1024) == -1.024
@@ -252,18 +276,26 @@ def test_deus_promille():
 ###############################################################################
 
 
+##
+# @brief Test of the clear function - see: deus_clear()
 def test_deus_clear():
     assert deus_math_lib.deus_clear() == 0
 
 
+##
+# @brief Test of the e function - see: deus_e()
 def test_deus_e():
     assert deus_math_lib.deus_e() == math.e
 
 
+##
+# @brief Test of the Pi function - see: deus_pi()
 def test_deus_pi():
     assert deus_math_lib.deus_pi() == math.pi
 
 
+##
+# @brief Test of the random function - see: deus_rnd()
 def test_deus_rnd():
     assert deus_math_lib.deus_rnd() != deus_math_lib.deus_rnd()
 

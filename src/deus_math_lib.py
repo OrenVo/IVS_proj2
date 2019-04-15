@@ -6,10 +6,10 @@
 # @file deus_math_lib.py
 # @brief  Library of math functions for the Holy calculator.
 #
-# @authors Roman Fulla
-# @authors Vojtěch Ulej
+# @authors Roman Fulla (Xfulla00)
+# @authors Vojtěch Ulej (xulejv00)
 #
-# @version 1.0.0
+# @version 1.0.1
 # @date 15.4.2019
 ###############################################################################
 
@@ -230,7 +230,6 @@ def deus_promille(val):
 # @defgroup CONSTATNTS Constants
 # @brief Operations returning constant value.
 # @details Random returns variable - see: deus_rnd()
-#
 # @{
 ###############################################################################
 
@@ -271,7 +270,7 @@ def deus_rnd():
 # Super secret hidden function,
 # which returns the answer to life,
 # the universe and everything!
-deus_vult():
+def deus_vult():
     return 42
 
 
