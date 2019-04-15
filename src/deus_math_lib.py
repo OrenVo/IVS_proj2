@@ -271,7 +271,7 @@ def deus_rnd():
 # Super secret hidden function,
 # which returns the answer to life,
 # the universe and everything!
-deus_vult():
+def deus_vult():
     return 42
 
 
