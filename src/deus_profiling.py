@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 
 ###############################################################################
@@ -16,6 +17,10 @@ import sys
 import deus_math_lib
 
 
+##
+# @brief Function calculating standard deviation.
+#
+# @return Standard deviation of numbers from input
 def StandardDeviation():
     sumX = 0
     sumX2 = 0
@@ -35,6 +40,5 @@ print(StandardDeviation())
 
 
 ###############################################################################
-# @}
 # End of the deus_profiling.py
 ###############################################################################
