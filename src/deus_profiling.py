@@ -1,8 +1,9 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 
 ###############################################################################
-# @file deus_profiling.c
+# @file deus_profiling.py
 # @brief Calculation of the standard deviation of numbers from the inputfile.
 #
 # @author Pavol Szepsi
@@ -34,10 +35,10 @@ def StandardDeviation():
     avgX = deus_math_lib.deus_div(sumX, N)
     return deus_math_lib.deus_root(deus_math_lib.deus_mult(deus_math_lib.deus_div(1, deus_math_lib.deus_sub(N, 1)), deus_math_lib.deus_sub(sumX2, deus_math_lib.deus_mult(N, deus_math_lib.deus_pow(avgX, 2)))), 2)
 
+
 print(StandardDeviation())
 
 
 ###############################################################################
-# @}
 # End of the deus_profiling.py
 ###############################################################################
