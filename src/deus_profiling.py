@@ -33,10 +33,12 @@ def StandardDeviation():
         N = deus_math_lib.deus_sum(N, 1)
 
     avgX = deus_math_lib.deus_div(sumX, N)
-    return deus_math_lib.deus_root(deus_math_lib.deus_mult(deus_math_lib.deus_div(1, deus_math_lib.deus_sub(N, 1)), deus_math_lib.deus_sub(sumX2, deus_math_lib.deus_mult(N, deus_math_lib.deus_pow(avgX, 2)))), 2)
+    res = deus_math_lib.deus_root(deus_math_lib.deus_mult(deus_math_lib.deus_div(1, deus_math_lib.deus_sub(N, 1)), deus_math_lib.deus_sub(sumX2, deus_math_lib.deus_mult(N, deus_math_lib.deus_pow(avgX, 2)))), 2)
+    return res
 
 
-print(StandardDeviation())
+x = StandardDeviation()
+print(x)
 
 
 ###############################################################################

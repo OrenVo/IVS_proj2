@@ -114,10 +114,10 @@ def deus_root(a, b):
     if a < 0 and (b % 2) == 0:
         return math.nan
     try:
-        res = math.pow(a, 1.0/b)
+        res = math.pow(a, 1.0/float(b))
     except ValueError:
         try:
-            res = math.pow(abs(a), 1.0/b)
+            res = math.pow(abs(a), 1.0/float(b))
             res = round(res, 10)
             return -res
         except:
