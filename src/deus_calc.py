@@ -5,6 +5,9 @@ from PyQt5.QtGui import *
 import os
 
 err = False
+a = 0
+op = 0
+ans = ""
 
 class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
 
@@ -27,7 +30,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.EulerBtn.clicked.connect(self.Keyboard_pressed)
         self.PiBtn.clicked.connect(self.Keyboard_pressed)
         self.BackspaceBtn.clicked.connect(self.bckspace)
-        #self.AnsBtn.clicked.connect(self.button_pressed)
+        self.AnsBtn.clicked.connect(self.ansClick)
         #Unary operators
         self.RndBtn.clicked.connect(self.unary_op)
         self.AbsBtn.clicked.connect(self.unary_op)
@@ -35,74 +38,132 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.PercBtn.clicked.connect(self.unary_op)
         self.PromBtn.clicked.connect(self.unary_op)
         #Arithmetic operators
-        """self.DivBtn.clicked.connect(self.button_pressed)
-        self.MulBtn.clicked.connect(self.button_pressed)
-        self.SubBtn.clicked.connect(self.button_pressed)
-        self.AddBtn.clicked.connect(self.button_pressed)
-        self.PowBtn.clicked.connect(self.button_pressed)
-        self.RootBtn.clicked.connect(self.button_pressed)
-        self.LogBtn.clicked.connect(self.button_pressed)
+        self.AddBtn.clicked.connect(self.arithmetic_op)
+        self.DivBtn.clicked.connect(self.arithmetic_op)
+        self.MulBtn.clicked.connect(self.arithmetic_op)
+        self.SubBtn.clicked.connect(self.arithmetic_op)
+        self.PowBtn.clicked.connect(self.arithmetic_op)
+        self.RootBtn.clicked.connect(self.arithmetic_op)
+        self.LogBtn.clicked.connect(self.arithmetic_op)
 
-        self.EqualsBtn.clicked.connect(self.button_pressed)"""
+        self.EqualsBtn.clicked.connect(self.equal)
 
 
 
     def Keyboard_pressed(self):
-        btn = self.sender()
         global err
         if err == True:
             err = False
-            self.Input.setText("")
+            self.Input.clear()
         newinput = self.Input.text() + self.sender().text()
         self.Input.setText(newinput)
 
 
     def bckspace(self):
-        input = self.Input.text()
-        self.Input.setText(input[:-1])
+        global err
+        if err == True:
+            err = False
+            self.Input.clear()
+            return
+        newinput = self.Input.text()
+        self.Input.setText(newinput[:-1])
 
     def unary_op(self):
-        btn = self.sender()
         operator = self.sender().text()
-        res = "Error"
         global err
+        global ans
         val = self.Input.text()
 
-        if operator == "Rnd":
-            res = deus_math_lib.deus_rnd()
+        if val == "e":
+            val = deus_math_lib.deus_e()
+        elif val == "π":
+            val = deus_math_lib.deus_pi()
 
-        elif operator == "x!":
-            try:
+        try:
+            if operator == "Rnd":
+                res = deus_math_lib.deus_rnd()
+            elif operator == "x!":
                 val = int(val)
                 res = deus_math_lib.deus_fact_ite(val)
-            except Exception as e:
-                err = True
-                self.Input.setText("Error")
-                return
-        elif operator == "abs":
-            try:
+
+            elif operator == "abs":
                 val = float(val)
                 res = deus_math_lib.deus_abs(val)
-            except Exception as e:
-                err = True
-                self.Input.setText("Error")
 
-        elif operator == "%":
-            try:
+            elif operator == "%":
                 val = float(val)
-            except Exception as e:
-                err = True
-                self.Input.setText("Error")
-            res = str(deus_math_lib.deus_percent(val)) + "%"
-            err = True
+                res = str(deus_math_lib.deus_percent(val)) + "%"
 
-        elif operator == "‰":
-            try:
+            elif operator == "‰":
                 val = float(val)
-            except Exception as e:
-                err = True
-                self.Input.setText("Error")
-            res = str(deus_math_lib.deus_promille(val)) + "‰"
-            err = True
+                res = str(deus_math_lib.deus_promille(val)) + "‰"
 
-        self.Input.setText(str(res))
+        except:
+            err = True
+            self.Input.setText("Error")
+        else:
+            ans = res
+            self.Input.setText(str(res))
+
+    def arithmetic_op(self):
+        operator = self.sender().text()
+        global err
+        global a
+        global op
+        op = operator
+
+        val = self.Input.text()
+        self.Input.clear()
+
+        if val == "π":
+            a = deus_math_lib.deus_pi()
+            return
+        elif val == "e":
+            a = deus_math_lib.deus_e()
+            return
+        try:
+            val = float(val)
+        except Exception as e:
+            err = True
+            self.Input.setText("Error")
+            return
+        a = val
+        return
+
+    def equal(self):
+        global err
+        global a
+        global op
+        global ans
+        try:
+            b = float(self.Input.text())
+        except Exception as e:
+            err = True
+            self.Input.setText("Error")
+            return
+
+        if op == "+":
+            ans = deus_math_lib.deus_sum(a, b)
+            self.Input.setText(str(ans))
+        elif op == "-":
+            ans = deus_math_lib.deus_sub(a, b)
+            self.Input.setText(str(ans))
+        elif op == "×":
+            ans = deus_math_lib.deus_mult(a, b)
+            self.Input.setText(str(ans))
+        elif op == "÷":
+            ans = deus_math_lib.deus_div(a, b)
+            self.Input.setText(str(ans))
+        elif op == "x^n":
+            ans = deus_math_lib.deus_pow(a, b)
+            self.Input.setText(str(ans))
+        elif op == "√x":
+            ans = deus_math_lib.deus_root(b, a)
+            self.Input.setText(str(ans))
+        elif op == "log":
+            ans = deus_math_lib.deus_log(b, a)
+            self.Input.setText(str(ans))
+
+    def ansClick(self):
+        global ans
+        self.Input.setText(str(ans))

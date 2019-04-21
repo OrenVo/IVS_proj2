@@ -335,6 +335,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.CBtn.clicked.connect(self.Input.clear)
+        self.Input.returnPressed.connect(self.EqualsBtn.click)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.Input, self.CBtn)
         MainWindow.setTabOrder(self.CBtn, self.PowBtn)
