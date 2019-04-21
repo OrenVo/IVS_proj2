@@ -6,11 +6,11 @@
 # @file deus_math_lib.py
 # @brief  Library of math functions for the Holy calculator.
 #
-# @authors Roman Fulla (Xfulla00)
+# @authors Roman Fulla (xfulla00)
 # @authors Vojtěch Ulej (xulejv00)
 #
-# @version 1.0.1
-# @date 15.4.2019
+# @version 1.2.0
+# @date 21.4.2019
 ###############################################################################
 
 
@@ -132,7 +132,7 @@ def deus_root(a, b):
 #
 # @param fac Positve integer from which the factorial will be calculated
 #
-# @return The product of all positive integers less than or equal to fac(fac!)
+# @return The product of all positive integers less than or equal to fac (fac!)
 def deus_fact_rec(fac):
     if not isinstance(fac, int):
         raise ValueError("Factorial must be integer!")
@@ -149,7 +149,7 @@ def deus_fact_rec(fac):
 #
 # @param fac Positve integer from which the factorial will be calculated
 #
-# @return The product of all positive integers less than or equal to fac(fac!)
+# @return The product of all positive integers less than or equal to fac (fac!)
 def deus_fact_ite(fac):
     if not isinstance(fac, int):
         raise ValueError("Factorial must be integer!")
@@ -232,14 +232,6 @@ def deus_promille(val):
 # @details Random returns variable - see: deus_rnd()
 # @{
 ###############################################################################
-
-
-##
-# @brief Function returns zero.
-#
-# @return 0
-def deus_clear():
-    return 0
 
 
 ##

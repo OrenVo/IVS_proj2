@@ -6,11 +6,11 @@
 # @file test_deus_math_lib.py
 # @brief Tests of the library of math functions for the Holy calculator
 #
-# @authors Roman Fulla (Xfulla00)
+# @authors Roman Fulla (xfulla00)
 # @authors Vojtěch Ulej (xulejv00)
 #
 # @version 1.0.2
-# @date 15.4.2019
+# @date 21.4.2019
 ###############################################################################
 
 

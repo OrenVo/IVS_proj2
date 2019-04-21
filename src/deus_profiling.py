@@ -6,10 +6,10 @@
 # @file deus_profiling.py
 # @brief Calculation of the standard deviation of numbers from the inputfile.
 #
-# @author Pavol Szepsi
+# @author Pavol Szepsi (xszeps00)
 #
-# @version 1.7.0
-# @date 15.4.2019
+# @version 2.0.0
+# @date 21.4.2019
 ###############################################################################
 
 
@@ -20,7 +20,7 @@ import deus_math_lib
 ##
 # @brief Function calculates standard deviation.
 #
-# @return Standard deviation of numbers from input.
+# @return Standard deviation of numbers from input
 def StandardDeviation():
     sumX = 0
     sumX2 = 0
