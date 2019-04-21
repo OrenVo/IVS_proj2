@@ -315,7 +315,7 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.Input.setFont(font)
-        self.Input.setFocusPolicy(QtCore.Qt.WheelFocus)
+        self.Input.setFocusPolicy(QtCore.Qt.NoFocus)
         self.Input.setAcceptDrops(True)
         self.Input.setStyleSheet("border: 2px solid gray")
         self.Input.setInputMethodHints(QtCore.Qt.ImhDigitsOnly|QtCore.Qt.ImhPreferNumbers)
@@ -382,6 +382,7 @@ class Ui_MainWindow(object):
         self.PercBtn.setText(_translate("MainWindow", "%"))
         self.AnsBtn.setText(_translate("MainWindow", "Ans"))
         self.EqualsBtn.setText(_translate("MainWindow", "="))
+        self.EqualsBtn.setShortcut(_translate("MainWindow", "Return, Enter"))
         self.FourBtn.setText(_translate("MainWindow", "4"))
         self.FourBtn.setShortcut(_translate("MainWindow", "4"))
         self.RootBtn.setText(_translate("MainWindow", "√x"))
@@ -411,9 +412,11 @@ class Ui_MainWindow(object):
         self.EightBtn.setShortcut(_translate("MainWindow", "8"))
         self.AbsBtn.setText(_translate("MainWindow", "abs"))
         self.DotBtn.setText(_translate("MainWindow", "."))
+        self.DotBtn.setShortcut(_translate("MainWindow", ","))
         self.CBtn.setText(_translate("MainWindow", "C"))
         self.CBtn.setShortcut(_translate("MainWindow", "Del"))
         self.BackspaceBtn.setText(_translate("MainWindow", "←"))
+        self.BackspaceBtn.setShortcut(_translate("MainWindow", "Backspace"))
         self.menuN_pov_da.setTitle(_translate("MainWindow", "Nápověda"))
 
 

@@ -45,7 +45,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.PowBtn.clicked.connect(self.arithmetic_op)
         self.RootBtn.clicked.connect(self.arithmetic_op)
         self.LogBtn.clicked.connect(self.arithmetic_op)
-
+        self.EqualsBtn.setAutoDefault(True)
         self.EqualsBtn.clicked.connect(self.equal)
 
 
@@ -86,7 +86,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             if operator == "Rnd":
                 res = deus_math_lib.deus_rnd()
             elif operator == "x!":
-                val = int(val)
+                val = int(float(val))
                 if val > 100000:
                     err = True
                     self.Input.setText("Over the limit!!")
@@ -100,6 +100,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             elif operator == "%":
                 val = float(val)
                 res = str(deus_math_lib.deus_percent(val)) + "%"
+                print("here")
 
             elif operator == "‰":
                 val = float(val)
@@ -124,18 +125,18 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             return
         op = operator
 
-        val = self.Input.text()
+        val = self.Input.text().replace(",", ".")
         self.Input.clear()
 
         if val == "π":
             a = deus_math_lib.deus_pi()
             return
-        elif val == "e":
+        if val == "e":
             a = deus_math_lib.deus_e()
             return
         try:
             val = float(val)
-        except Exception as e:
+        except:
             err = True
             self.Input.setText("Error")
             return
@@ -152,7 +153,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             self.Input.clear()
             return
 
-        val = self.Input.text()
+        val = self.Input.text().replace(",", ".")
         if val == "e":
             b = deus_math_lib.deus_e()
         elif val == "π":
@@ -164,40 +165,44 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
                 err = True
                 self.Input.setText("Error")
                 return
+        try:
+            if op == "+":
+                ans = deus_math_lib.deus_sum(a, b)
+                self.Input.setText(str(ans))
+            elif op == "-":
+                ans = deus_math_lib.deus_sub(a, b)
+                self.Input.setText(str(ans))
+            elif op == "×":
+                ans = deus_math_lib.deus_mult(a, b)
+                self.Input.setText(str(ans))
+            elif op == "÷":
+                ans = deus_math_lib.deus_div(a, b)
+                self.Input.setText(str(ans))
+            elif op == "x^n":
+                if b > 100 and a > 100:
+                    err = True
+                    self.Input.setText("Over the limit!!")
+                    return
+                ans = deus_math_lib.deus_pow(a, b)
+                self.Input.setText(str(ans))
+            elif op == "√x":
+                ans = deus_math_lib.deus_root(b, a)
+                self.Input.setText(str(ans))
+            elif op == "log":
+                ans = deus_math_lib.deus_log(b, a)
+                self.Input.setText(str(ans))
+            elif op == "" and val == "e":
+                self.Input.setText(str(b))
+            elif op == "" and val == "π":
+                self.Input.setText(str(b))
 
-        if op == "+":
-            ans = deus_math_lib.deus_sum(a, b)
-            self.Input.setText(str(ans))
-        elif op == "-":
-            ans = deus_math_lib.deus_sub(a, b)
-            self.Input.setText(str(ans))
-        elif op == "×":
-            ans = deus_math_lib.deus_mult(a, b)
-            self.Input.setText(str(ans))
-        elif op == "÷":
-            ans = deus_math_lib.deus_div(a, b)
-            self.Input.setText(str(ans))
-        elif op == "x^n":
-            if b > 1000:
-                err = True
-                self.Input.setText("Over the limit!!")
-                return
-            ans = deus_math_lib.deus_pow(a, b)
-            self.Input.setText(str(ans))
-        elif op == "√x":
-            ans = deus_math_lib.deus_root(b, a)
-            self.Input.setText(str(ans))
-        elif op == "log":
-            ans = deus_math_lib.deus_log(b, a)
-            self.Input.setText(str(ans))
-        elif op == "" and val == "e":
-            self.Input.setText(str(b))
-        elif op == "" and val == "π":
-            self.Input.setText(str(b))
+            if op == "":
+                ans = b
+            op = ""
+        except:
+            err = True
+            self.Input.setText("Error")
 
-        if op == "":
-            ans = b
-        op = ""
 
     def ansClick(self):
         global ans
