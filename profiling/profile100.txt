@@ -1,0 +1,44 @@
+0
+         460 function calls in 0.065 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 __future__.py:48(<module>)
+        1    0.000    0.000    0.000    0.000 __future__.py:74(_Feature)
+        7    0.000    0.000    0.000    0.000 __future__.py:75(__init__)
+        1    0.000    0.000    0.000    0.000 deus_math_lib.py:107(deus_root)
+        1    0.004    0.004    0.063    0.063 deus_math_lib.py:17(<module>)
+      300    0.000    0.000    0.000    0.000 deus_math_lib.py:35(deus_sum)
+        2    0.000    0.000    0.000    0.000 deus_math_lib.py:46(deus_sub)
+        2    0.000    0.000    0.000    0.000 deus_math_lib.py:57(deus_mult)
+        2    0.000    0.000    0.000    0.000 deus_math_lib.py:69(deus_div)
+      101    0.000    0.000    0.000    0.000 deus_math_lib.py:91(deus_pow)
+        1    0.001    0.001    0.065    0.065 deus_profiling.py:16(<module>)
+        1    0.001    0.001    0.002    0.002 deus_profiling.py:24(StandardDeviation)
+        6    0.000    0.000    0.000    0.000 hashlib.py:100(__get_openssl_constructor)
+        1    0.048    0.048    0.049    0.049 hashlib.py:56(<module>)
+        1    0.000    0.000    0.001    0.001 random.py:100(seed)
+        1    0.009    0.009    0.059    0.059 random.py:40(<module>)
+        1    0.000    0.000    0.000    0.000 random.py:657(WichmannHill)
+        1    0.000    0.000    0.000    0.000 random.py:72(Random)
+        1    0.000    0.000    0.000    0.000 random.py:807(SystemRandom)
+        1    0.000    0.000    0.001    0.001 random.py:91(__init__)
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_md5}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha1}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha224}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha256}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha384}
+        1    0.000    0.000    0.000    0.000 {_hashlib.openssl_sha512}
+        1    0.000    0.000    0.000    0.000 {binascii.hexlify}
+        1    0.001    0.001    0.001    0.001 {function seed at 0x7f0ee077e2a8}
+        6    0.000    0.000    0.000    0.000 {getattr}
+        6    0.000    0.000    0.000    0.000 {globals}
+        1    0.000    0.000    0.000    0.000 {math.exp}
+        2    0.000    0.000    0.000    0.000 {math.log}
+        1    0.000    0.000    0.000    0.000 {math.sqrt}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        1    0.000    0.000    0.000    0.000 {method 'union' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 {posix.urandom}
+
+

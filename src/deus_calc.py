@@ -86,12 +86,12 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             if operator == "Rnd":
                 res = deus_math_lib.deus_rnd()
             elif operator == "x!":
-                val = int(float(val))
+                val = int(val)
                 if val > 100000:
                     err = True
                     self.Input.setText("Over the limit!!")
                     return
-                res = float(deus_math_lib.deus_fact_ite(val))
+                res = deus_math_lib.deus_fact_ite(val)
 
             elif operator == "abs":
                 val = float(val)
@@ -100,13 +100,13 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             elif operator == "%":
                 val = float(val)
                 res = str(deus_math_lib.deus_percent(val)) + "%"
-                print("here")
 
             elif operator == "‰":
                 val = float(val)
                 res = str(deus_math_lib.deus_promille(val)) + "‰"
 
-        except:
+        except Exception as e:
+            print(str(e))
             err = True
             self.Input.setText("Error")
         else:

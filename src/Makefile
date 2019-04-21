@@ -16,6 +16,9 @@ clean:
 
 pack:
 
+profile:
+	python -m cProfile ./deus_profiling.py <profiling.txt
+
 doc:
 	cd .. && rm -rf /doc
 	doxygen
