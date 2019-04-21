@@ -6,7 +6,7 @@ import os
 
 err = False
 a = 0
-op = 0
+op = ""
 ans = ""
 
 class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -52,8 +52,11 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def Keyboard_pressed(self):
         global err
+        global ans
         if err == True:
             err = False
+            self.Input.clear()
+        if str(ans) == self.Input.text():
             self.Input.clear()
         newinput = self.Input.text() + self.sender().text()
         self.Input.setText(newinput)
@@ -84,7 +87,11 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
                 res = deus_math_lib.deus_rnd()
             elif operator == "x!":
                 val = int(val)
-                res = deus_math_lib.deus_fact_ite(val)
+                if val > 100000:
+                    err = True
+                    self.Input.setText("Over the limit!!")
+                    return
+                res = float(deus_math_lib.deus_fact_ite(val))
 
             elif operator == "abs":
                 val = float(val)
@@ -110,6 +117,11 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         global err
         global a
         global op
+
+        if operator == "-" and (self.Input.text() == "" or err == True):
+            err = False
+            self.Input.setText("-")
+            return
         op = operator
 
         val = self.Input.text()
@@ -135,12 +147,23 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         global a
         global op
         global ans
-        try:
-            b = float(self.Input.text())
-        except Exception as e:
-            err = True
-            self.Input.setText("Error")
+        if err == True:
+            err = False
+            self.Input.clear()
             return
+
+        val = self.Input.text()
+        if val == "e":
+            b = deus_math_lib.deus_e()
+        elif val == "π":
+            b = deus_math_lib.deus_pi()
+        else:
+            try:
+                b = float(val)
+            except:
+                err = True
+                self.Input.setText("Error")
+                return
 
         if op == "+":
             ans = deus_math_lib.deus_sum(a, b)
@@ -155,6 +178,10 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             ans = deus_math_lib.deus_div(a, b)
             self.Input.setText(str(ans))
         elif op == "x^n":
+            if b > 1000:
+                err = True
+                self.Input.setText("Over the limit!!")
+                return
             ans = deus_math_lib.deus_pow(a, b)
             self.Input.setText(str(ans))
         elif op == "√x":
@@ -163,6 +190,14 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         elif op == "log":
             ans = deus_math_lib.deus_log(b, a)
             self.Input.setText(str(ans))
+        elif op == "" and val == "e":
+            self.Input.setText(str(b))
+        elif op == "" and val == "π":
+            self.Input.setText(str(b))
+
+        if op == "":
+            ans = b
+        op = ""
 
     def ansClick(self):
         global ans

@@ -211,7 +211,7 @@ def deus_abs(abs):
 #
 # @return The percentage value of the parameter
 def deus_percent(val):
-    return val / 100
+    return val * 100
 
 
 ##
@@ -221,7 +221,7 @@ def deus_percent(val):
 #
 # @return The promille value of the parameter
 def deus_promille(val):
-    return val / 1000
+    return val * 1000
 
 
 ###############################################################################
@@ -263,7 +263,7 @@ def deus_pi():
 #
 # @return Pseudorandom number
 def deus_rnd():
-    return randint(-666, 1000)
+    return randint(-666, 10000)
 
 
 ##

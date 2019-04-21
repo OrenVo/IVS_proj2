@@ -321,7 +321,7 @@ class Ui_MainWindow(object):
         self.Input.setInputMethodHints(QtCore.Qt.ImhDigitsOnly|QtCore.Qt.ImhPreferNumbers)
         self.Input.setText("")
         self.Input.setFrame(True)
-        self.Input.setClearButtonEnabled(True)
+        self.Input.setClearButtonEnabled(False)
         self.Input.setObjectName("Input")
         self.gridLayout_2.addWidget(self.Input, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
