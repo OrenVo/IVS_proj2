@@ -1,18 +1,18 @@
 Deus Calculator
-Fakulta informaèních technologií
+Fakulta informacnÃ­ch technologiÃ­
 VUT BRNO
 
 
-NÁPOVEDA PRE APLIKÁCIU
+NÃPOVEDA PRE APLIKÃCIU
 
 
-Autori: Daniel Andraško						
+Autori: Daniel AndraÅ¡ko						
 	Roman Fulla
 	Vojta Ulej	                                                               
 	Pavol Szepsi
 
 
-Dátum: 23.04.2019
+DÃ¡tum: 23.04.2019
 
 
 
@@ -22,9 +22,9 @@ Dátum: 23.04.2019
 
 
 
-Obsah: 1. Úvod
+Obsah: 1. Ãšvod
        2. Funkcionalita
-       3. Známe problémy
+       3. ZnÃ¡me problÃ©my
 
 
 
@@ -34,15 +34,15 @@ Obsah: 1. Úvod
 
 
 
-Úvod
+Ãšvod
 
-Tento program sme vytvorili pre predmet Praktické aspekty vıvoje software. 
-Jeho úèelom je vypoèíta základné matematické operácie (+, -, *, /, log, faktoriál, atï...). 
-Kalkulaèka dokáe poèíta aj desatinné èísla. 
-Je navrhnutı aj mockup pokroèilej verzie programu, 
-v ktorom sa okrem základnıch matematickıch operácii dajú vypoèíta aj goniometrické funkcie a kreslia grafy. 
-Pri tvorbe tohto programu sme na tvorbu GUI pouívali program Qt. 
-Aplikácia je naprogramovaná v jazyku Python. 
+Tento program sme vytvorili pre predmet PraktickÃ© aspekty vÃ½voje software. 
+Jeho Ãºcelom je vypocÃ­tat zÃ¡kladnÃ© matematickÃ© operÃ¡cie (+, -, *, /, log, faktoriÃ¡l, atd...). 
+Kalkulacka dokÃ¡Å¾e pocÃ­tat aj desatinnÃ© cÃ­sla. 
+Je navrhnutÃ½ aj mockup pokrocilej verzie programu, 
+v ktorom sa okrem zÃ¡kladnÃ½ch matematickÃ½ch operÃ¡cii dajÃº vypocÃ­tat aj goniometrickÃ© funkcie a kreslia grafy. 
+Pri tvorbe tohto programu sme na tvorbu GUI pouÅ¾Ã­vali program Qt. 
+AplikÃ¡cia je naprogramovanÃ¡ v jazyku Python. 
 
 
 
@@ -55,87 +55,85 @@ Aplikácia je naprogramovaná v jazyku Python.
 Funkcionalita
 
 
-Kalkulaèka pouíva nasledujúce znaky:
+Kalkulacka pouÅ¾Ã­va nasledujÃºce znaky:
 
-1. "C" (clear) - tento znak nastaví èíslo na 0
-2. "‹" (backspace) - tento znak odstráni poslednı znak
-3. "abs" (absolútna hodnota) - tento znak vytvorí zo zadaného èísla absolútnu hodnotu
-4. "e" (Eurelovo èíslo) - tento znak obsahuje hodnotu Eurelovho èísla
-5. "znak Pí" (Pí) - tento znak obsahuje hodnotu Pí
-6. "Rnd" (random) - tento znak vytvorí náhodné èíslo
-7. "," (desatinná èiarka) - tento znak dá za poslednú èíslicu desatinnú èiarku
-8. "Ans" (answer) - tento znak napíše posledné pouité èíslo
-9. "=" (rovná sa) - tento znak napíše vısledok
-
-
-
-Kalkulaèka dokáe vypoèíta nasledujúce operácie:
-
-1."+" (plus) – táto operácia sèíta dve èísla 
-	Píšte vo formáte: x + y
-	a.	Napíšte èíslo x
-	b.	Stlaète tlaèidlo "+"
-	c.	Napíšte èíslo y
-	d.	Stlaète tlaèidlo =
-
-2."–" (mínus) – táto operácia odèíta od seba dve èísla
-	Píšte vo formáte: x - y
-	a.	Napíšte èíslo x
-	b.	Stlaète tlaèidlo "–"
-	c.	Napíšte èíslo y
-	d.	Stlaète tlaèidlo =
-
-3."*" (krát) – táto operácia vynásobí dve èísla
-	Píšte vo formáte: x * y
-	a.	Napíšte èíslo x
-	b.	Stlaète tlaèidlo "*"
-	c.	Napíšte èíslo y
-	d.	Staète tlaèidlo = 
-
-4.":" (deleno) – táto operácia vydelí dve èísla
-	Píšte vo formáte: x : y
-	a.	Napíšte èíslo x
-	b.	Stlaète tlaèidlo ":"
-	c.	Napíšte èíslo y
-	d.	Stlaète tlaèidlo =
-
-5."x^n" (n-tá mocnina x) – táto operácia umocní dve èísla 
-	Píšte vo formáte: x ^ n
-	a.	Napíšte èíslo x
-	b.	Stlaète tlaèidlo "x^n"
-	c.	Napíšte èíslo n
-	d.	Stlaète tlaèidlo =
-
-6."x^(1/n)" (n-tá odmocnina z x) – táto operácia odmocní dve èísla 
-	Píšte vo formáte: x ^ (1 / n)
-	a.	Napíšte èíslo x
-	b.	Stlaète tlaèidlo "x^n"
-	c.	Napíšte èíslo n
-	d.	Stlaète tlaèidlo =
-
-7."x!" (faktoriál) – táto operácia urobí faktoriál z èísla x 
-	Píšte vo formáte: x!
-	a.	Napíšte èíslo x
-	b.	Stlaète tlaèidlo "x!"
-
-8."log" (logaritmus) – táto operácia urobí logaritmus  
-	Píšte vo formáte: loga(x)
-	a.	Napíšte èíslo a - základ logaritmu
-	b.	Stlaète tlaèidlo "log"
-	c.	Napíšte èíslo x - logaritmus èísla x
-	d.	Stlaète tlaèidlo =
-
-9."%" (percentá) – táto operácia vytvorí z èísla percentá 
-	Píšte vo formáte: x%
-	a.	Napíšte èíslo x
-	b.	Stlaète tlaèidlo "%"
-
-10."‰" (promile) – táto operácia urobí z èísla promile 
-	Píšte vo formáte: x‰
-	a.	Napíšte èíslo x
-	b.	Stlaète tlaèidlo "‰"
+1. "C" (clear) - tento znak nastavÃ­ cÃ­slo na 0
+2. "â€¹" (backspace) - tento znak odstrÃ¡ni poslednu cislicu
+3. "abs" (absolÃºtna hodnota) - tento znak vytvorÃ­ zo zadanÃ©ho cÃ­sla absolÃºtnu hodnotu
+4. "e" (Eurelovo cÃ­slo) - tento znak obsahuje hodnotu Eurelovho cÃ­sla
+5. "znak PÃ­" (PÃ­) - tento znak obsahuje hodnotu PÃ­
+6. "Rnd" (random) - tento znak vytvorÃ­ nÃ¡hodnÃ© cÃ­slo
+7. "," (desatinnÃ¡ ciarka) - tento znak dÃ¡ za poslednÃº cÃ­slicu desatinnÃº ciarku
+8. "Ans" (answer) - tento znak napÃ­Å¡e poslednÃ© pouÅ¾itÃ© cÃ­slo
+9. "=" (rovnÃ¡ sa) - tento znak napÃ­Å¡e vÃ½sledok
 
 
+
+Kalkulacka dokÃ¡Å¾e vypocÃ­tat nasledujÃºce operÃ¡cie:
+
+1."+" (plus) â€“ tÃ¡to operÃ¡cia scÃ­ta dve cÃ­sla 
+	PÃ­Å¡te vo formÃ¡te: x + y
+	a.	NapÃ­Å¡te cÃ­slo x
+	b.	StlaÃ¨te tlacidlo "+"
+	c.	NapÃ­Å¡te cÃ­slo y
+	d.	StlaÃ¨te tlacidlo =
+
+2."â€“" (mÃ­nus) â€“ tÃ¡to operÃ¡cia odcÃ­ta od seba dve cÃ­sla
+	PÃ­Å¡te vo formÃ¡te: x - y
+	a.	NapÃ­Å¡te cÃ­slo x
+	b.	Stlacte tlacidlo "â€“"
+	c.	NapÃ­Å¡te cÃ­slo y
+	d.	Stlacte tlacidlo =
+
+3."*" (krÃ¡t) â€“ tÃ¡to operÃ¡cia vynÃ¡sobÃ­ dve cÃ­sla
+	PÃ­Å¡te vo formÃ¡te: x * y
+	a.	NapÃ­Å¡te cÃ­slo x
+	b.	Stlacte tlacidlo "*"
+	c.	NapÃ­Å¡te cÃ­slo y
+	d.	Stacte tlacidlo = 
+
+4.":" (deleno) â€“ tÃ¡to operÃ¡cia vydelÃ­ dve cÃ­sla
+	PÃ­Å¡te vo formÃ¡te: x : y
+	a.	NapÃ­Å¡te cÃ­slo x
+	b.	Stlacte tlacidlo ":"
+	c.	NapÃ­Å¡te cÃ­slo y
+	d.	Stlacte tlacidlo =
+
+5."x^n" (n-tÃ¡ mocnina x) â€“ tÃ¡to operÃ¡cia umocnÃ­ dve cÃ­sla 
+	PÃ­Å¡te vo formÃ¡te: x ^ n
+	a.	NapÃ­Å¡te cÃ­slo x
+	b.	Stlacte tlacidlo "x^n"
+	c.	NapÃ­Å¡te cÃ­slo n
+	d.	Stlacte tlacidlo =
+
+6."x^(1/n)" (n-tÃ¡ odmocnina z x) â€“ tÃ¡to operÃ¡cia odmocnÃ­ dve cÃ­sla 
+	PÃ­Å¡te vo formÃ¡te: x ^ (1 / n)
+	a.	NapÃ­Å¡te cÃ­slo x
+	b.	Stlacte tlacidlo "x^n"
+	c.	NapÃ­Å¡te cÃ­slo n
+	d.	Stlacte tlacidlo =
+
+7."x!" (faktoriÃ¡l) â€“ tÃ¡to operÃ¡cia urobÃ­ faktoriÃ¡l z cÃ­sla x 
+	PÃ­Å¡te vo formÃ¡te: x!
+	a.	NapÃ­Å¡te cÃ­slo x
+	b.	Stlacte tlacidlo "x!"
+
+8."log" (logaritmus) â€“ tÃ¡to operÃ¡cia urobÃ­ logaritmus  
+	PÃ­Å¡te vo formÃ¡te: loga(x)
+	a.	NapÃ­Å¡te cÃ­slo a - zÃ¡klad logaritmu
+	b.	Stlacte tlacidlo "log"
+	c.	NapÃ­Å¡te cÃ­slo x - logaritmus cÃ­sla x
+	d.	Stlacte tlacidlo =
+
+9."%" (percentÃ¡) â€“ tÃ¡to operÃ¡cia vytvorÃ­ z cÃ­sla percentÃ¡ 
+	PÃ­Å¡te vo formÃ¡te: x%
+	a.	NapÃ­Å¡te cÃ­slo x
+	b.	StlaÃ¨te tlacidlo "%"
+
+10."â€°" (promile) â€“ tÃ¡to operÃ¡cia urobÃ­ z cÃ­sla promile 
+	PÃ­Å¡te vo formÃ¡te: xâ€°
+	a.	NapÃ­Å¡te cÃ­slo x
+	b.	StlaÃ¨te tlacidlo "â€°"
 
 
 
@@ -144,10 +142,12 @@ Kalkulaèka dokáe vypoèíta nasledujúce operácie:
 
 
 
-Známe problémy
 
-Táto aplikácia obsahuje niektoré známe problémy. 
-Pre podrobnejšie informácie si pozrite "manual.pdf".
+
+ZnÃ¡me problÃ©my
+
+TÃ¡to aplikÃ¡cia obsahuje niektorÃ© znÃ¡me problÃ©my. 
+Pre podrobnejÅ¡ie informÃ¡cie si pozrite "manual.pdf".
 
 
 
