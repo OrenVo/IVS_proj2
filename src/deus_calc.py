@@ -79,8 +79,16 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         if err == True:
             return
         if val == "e":
+            if operator == "x!":
+                err = True
+                self.Input.setText("ERROR")
+                return
             val = deus_math_lib.deus_e()
         elif val == "π":
+            if operator == "x!":
+                err = True
+                self.Input.setText("ERROR")
+                return
             val = deus_math_lib.deus_pi()
 
         try:
@@ -90,7 +98,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
                 val = int(val)
                 if val > 170:
                     err = True
-                    self.Input.setText("Over the limit!!")
+                    self.Input.setText("TOO LARGE NUMBER!!")
                     return
                 res = float(deus_math_lib.deus_fact_ite(val))
 
@@ -109,7 +117,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         except Exception as e:
             print(str(e))
             err = True
-            self.Input.setText("Error")
+            self.Input.setText("ERROR")
         else:
             ans = res
             self.Input.setText(str(res))
@@ -140,7 +148,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             val = float(val)
         except:
             err = True
-            self.Input.setText("Error")
+            self.Input.setText("ERROR")
             return
         a = val
         return
@@ -165,7 +173,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
                 b = float(val)
             except:
                 err = True
-                self.Input.setText("Error")
+                self.Input.setText("ERROR")
                 return
         try:
             if op == "+":
@@ -199,7 +207,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             op = ""
         except:
             err = True
-            self.Input.setText("Error")
+            self.Input.setText("ERROR")
 
 
     def ansClick(self):

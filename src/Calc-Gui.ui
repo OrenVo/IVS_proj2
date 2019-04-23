@@ -34,7 +34,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../icon/deus_icon.ico</normaloff>../icon/deus_icon.ico</iconset>
+    <normaloff>deus_vult.ico</normaloff>deus_vult.ico</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>true</bool>
@@ -739,7 +739,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>Crusader/Crusader/Knights_Templar_Cross.svg</normaloff>Crusader/Crusader/Knights_Templar_Cross.svg</iconset>
+          <normaloff>Cross_Templar.png</normaloff>Cross_Templar.png</iconset>
         </property>
         <property name="iconSize">
          <size>
