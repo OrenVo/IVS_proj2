@@ -243,29 +243,29 @@ def test_deus_abs():
 ##
 # @brief Tests of the percentage function - see: deus_percent()
 def test_deus_percent():
-    assert deus_math_lib.deus_percent(-999999) == -9999.99
-    assert deus_math_lib.deus_percent(-128) == -1.28
-    assert deus_math_lib.deus_percent(-10.5) == -0.105
+    assert deus_math_lib.deus_percent(-999999) == -99999900
+    assert deus_math_lib.deus_percent(-128) == -12800
+    assert deus_math_lib.deus_percent(-10.5) == -1050
 
     assert deus_math_lib.deus_percent(0) == 0
 
-    assert deus_math_lib.deus_percent(10.5) == 0.105
-    assert deus_math_lib.deus_percent(128) == 1.28
-    assert deus_math_lib.deus_percent(999999) == 9999.99
+    assert deus_math_lib.deus_percent(10.5) == 1050
+    assert deus_math_lib.deus_percent(128) == 12800
+    assert deus_math_lib.deus_percent(999999) == 99999900
 
 
 ##
 # @brief Tests of the promille function - see: deus_promille()
 def test_deus_promille():
-    assert deus_math_lib.deus_promille(-20042001) == -20042.001
-    assert deus_math_lib.deus_promille(-1024) == -1.024
-    assert deus_math_lib.deus_promille(-100.5) == -0.1005
+    assert deus_math_lib.deus_promille(-20042001) == -20042001000
+    assert deus_math_lib.deus_promille(-1024) == -1024000
+    assert deus_math_lib.deus_promille(-100.5) == -100500
 
     assert deus_math_lib.deus_promille(0) == 0
 
-    assert deus_math_lib.deus_promille(100.5) == 0.1005
-    assert deus_math_lib.deus_promille(1024) == 1.024
-    assert deus_math_lib.deus_promille(20042001) == 20042.001
+    assert deus_math_lib.deus_promille(100.5) == 100500
+    assert deus_math_lib.deus_promille(1024) == 1024000
+    assert deus_math_lib.deus_promille(20042001) == 20042001000
 
 
 ###############################################################################
@@ -274,12 +274,6 @@ def test_deus_promille():
 # @brief Tests of the constants.
 # @{
 ###############################################################################
-
-
-##
-# @brief Test of the clear function - see: deus_clear()
-def test_deus_clear():
-    assert deus_math_lib.deus_clear() == 0
 
 
 ##
