@@ -1,4 +1,4 @@
-xulejv00 x (GUI)
-xfulla00 x (testy)
-xandra05 x (mockup)
-xszeps00 x (profiling)
+xandra05 115 (mockup, návod, instalátor)
+xszeps00 110 (profiling, debugging, manuál)
+xfulla00 90 (testy, údržba a psaní dokumentace)
+xulejv00 85 (GUI, knihovna, správa repozitáře)
