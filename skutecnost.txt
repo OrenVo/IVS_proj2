@@ -1,8 +1,12 @@
-Rozdíly mezi plánem a skuteèností.
+Rozdiely medzi plánom a skutoènosou.
 
 
-1. Makefile vznikal v prùbìhu celého projektu.
+1. Makefile vznikal v priebehu celého projektu.
 
-2. Èást knihovny vznikla døíve ne testy.
+2. Èas kninice vznikla skôr ako testy.
 
-3. S pracovních a osobních dùvodù se vìtšina termínù pøesunula na pozdìji.
+3. Z pracovnıch a osobnıch dôvodov sa väèšina termínov presunula na neskôr.
+
+4. Premıš¾ali sme nad viacerımi zloitejšími funkciami, na ktoré nebol dostatok èasu.
+
+5. Rozdelenie úloh sa pod¾a predpokladu zmenilo, pod¾a zruèností a èasu.
