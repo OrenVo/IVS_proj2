@@ -1,0 +1,161 @@
+Deus Calculator
+Fakulta informaèních technologií
+VUT BRNO
+
+
+NÁPOVEDA PRE APLIKÁCIU
+
+
+Autori: Daniel Andraško						
+	Roman Fulla
+	Vojta Ulej	                                                               
+	Pavol Szepsi
+
+
+Dátum: 23.04.2019
+
+
+
+
+
+
+
+
+
+Obsah: 1. Úvod
+       2. Funkcionalita
+       3. Známe problémy
+
+
+
+
+
+
+
+
+
+Úvod
+
+Tento program sme vytvorili pre predmet Praktické aspekty vıvoje software. 
+Jeho úèelom je vypoèíta základné matematické operácie (+, -, *, /, log, faktoriál, atï...). 
+Kalkulaèka dokáe poèíta aj desatinné èísla. 
+Je navrhnutı aj mockup pokroèilej verzie programu, 
+v ktorom sa okrem základnıch matematickıch operácii dajú vypoèíta aj goniometrické funkcie a kreslia grafy. 
+Pri tvorbe tohto programu sme na tvorbu GUI pouívali program Qt. 
+Aplikácia je naprogramovaná v jazyku Python. 
+
+
+
+
+
+
+
+
+
+Funkcionalita
+
+
+Kalkulaèka pouíva nasledujúce znaky:
+
+1. "C" (clear) - tento znak nastaví èíslo na 0
+2. "‹" (backspace) - tento znak odstráni poslednı znak
+3. "abs" (absolútna hodnota) - tento znak vytvorí zo zadaného èísla absolútnu hodnotu
+4. "e" (Eurelovo èíslo) - tento znak obsahuje hodnotu Eurelovho èísla
+5. "znak Pí" (Pí) - tento znak obsahuje hodnotu Pí
+6. "Rnd" (random) - tento znak vytvorí náhodné èíslo
+7. "," (desatinná èiarka) - tento znak dá za poslednú èíslicu desatinnú èiarku
+8. "Ans" (answer) - tento znak napíše posledné pouité èíslo
+9. "=" (rovná sa) - tento znak napíše vısledok
+
+
+
+Kalkulaèka dokáe vypoèíta nasledujúce operácie:
+
+1."+" (plus) – táto operácia sèíta dve èísla 
+	Píšte vo formáte: x + y
+	a.	Napíšte èíslo x
+	b.	Stlaète tlaèidlo "+"
+	c.	Napíšte èíslo y
+	d.	Stlaète tlaèidlo =
+
+2."–" (mínus) – táto operácia odèíta od seba dve èísla
+	Píšte vo formáte: x - y
+	a.	Napíšte èíslo x
+	b.	Stlaète tlaèidlo "–"
+	c.	Napíšte èíslo y
+	d.	Stlaète tlaèidlo =
+
+3."*" (krát) – táto operácia vynásobí dve èísla
+	Píšte vo formáte: x * y
+	a.	Napíšte èíslo x
+	b.	Stlaète tlaèidlo "*"
+	c.	Napíšte èíslo y
+	d.	Staète tlaèidlo = 
+
+4.":" (deleno) – táto operácia vydelí dve èísla
+	Píšte vo formáte: x : y
+	a.	Napíšte èíslo x
+	b.	Stlaète tlaèidlo ":"
+	c.	Napíšte èíslo y
+	d.	Stlaète tlaèidlo =
+
+5."x^n" (n-tá mocnina x) – táto operácia umocní dve èísla 
+	Píšte vo formáte: x ^ n
+	a.	Napíšte èíslo x
+	b.	Stlaète tlaèidlo "x^n"
+	c.	Napíšte èíslo n
+	d.	Stlaète tlaèidlo =
+
+6."x^(1/n)" (n-tá odmocnina z x) – táto operácia odmocní dve èísla 
+	Píšte vo formáte: x ^ (1 / n)
+	a.	Napíšte èíslo x
+	b.	Stlaète tlaèidlo "x^n"
+	c.	Napíšte èíslo n
+	d.	Stlaète tlaèidlo =
+
+7."x!" (faktoriál) – táto operácia urobí faktoriál z èísla x 
+	Píšte vo formáte: x!
+	a.	Napíšte èíslo x
+	b.	Stlaète tlaèidlo "x!"
+
+8."log" (logaritmus) – táto operácia urobí logaritmus  
+	Píšte vo formáte: loga(x)
+	a.	Napíšte èíslo a - základ logaritmu
+	b.	Stlaète tlaèidlo "log"
+	c.	Napíšte èíslo x - logaritmus èísla x
+	d.	Stlaète tlaèidlo =
+
+9."%" (percentá) – táto operácia vytvorí z èísla percentá 
+	Píšte vo formáte: x%
+	a.	Napíšte èíslo x
+	b.	Stlaète tlaèidlo "%"
+
+10."‰" (promile) – táto operácia urobí z èísla promile 
+	Píšte vo formáte: x‰
+	a.	Napíšte èíslo x
+	b.	Stlaète tlaèidlo "‰"
+
+
+
+
+
+
+
+
+
+
+Známe problémy
+
+Táto aplikácia obsahuje niektoré známe problémy. 
+Pre podrobnejšie informácie si pozrite "manual.pdf".
+
+
+
+
+
+
+
+
+
+
+
