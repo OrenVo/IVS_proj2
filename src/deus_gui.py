@@ -12,13 +12,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(350, 527)
+        MainWindow.resize(350, 577)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
-        MainWindow.setMinimumSize(QtCore.QSize(350, 477))
+        MainWindow.setMinimumSize(QtCore.QSize(350, 577))
         MainWindow.setMaximumSize(QtCore.QSize(350, 527))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("../icon/icon 004.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
