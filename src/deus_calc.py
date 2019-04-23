@@ -48,7 +48,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.EqualsBtn.setAutoDefault(True)
         self.EqualsBtn.clicked.connect(self.equal)
 
-
+        self.DeusVult.clicked.connect(self.Deus)
 
     def Keyboard_pressed(self):
         global err
@@ -76,7 +76,8 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         global err
         global ans
         val = self.Input.text()
-
+        if err == True:
+            return
         if val == "e":
             val = deus_math_lib.deus_e()
         elif val == "π":
@@ -87,11 +88,11 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
                 res = deus_math_lib.deus_rnd()
             elif operator == "x!":
                 val = int(val)
-                if val > 100000:
+                if val > 170:
                     err = True
                     self.Input.setText("Over the limit!!")
                     return
-                res = deus_math_lib.deus_fact_ite(val)
+                res = float(deus_math_lib.deus_fact_ite(val))
 
             elif operator == "abs":
                 val = float(val)
@@ -118,7 +119,8 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         global err
         global a
         global op
-
+        if err == True:
+            return
         if operator == "-" and (self.Input.text() == "" or err == True):
             err = False
             self.Input.setText("-")
@@ -179,11 +181,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
                 ans = deus_math_lib.deus_div(a, b)
                 self.Input.setText(str(ans))
             elif op == "x^n":
-                if b > 100 and a > 100:
-                    err = True
-                    self.Input.setText("Over the limit!!")
-                    return
-                ans = deus_math_lib.deus_pow(a, b)
+                ans = float(deus_math_lib.deus_pow(a, b))
                 self.Input.setText(str(ans))
             elif op == "√x":
                 ans = deus_math_lib.deus_root(b, a)
@@ -207,3 +205,7 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
     def ansClick(self):
         global ans
         self.Input.setText(str(ans))
+
+        pres = False
+    def Deus(self):
+        self.Input.setText(str(deus_math_lib.deus_vult()))

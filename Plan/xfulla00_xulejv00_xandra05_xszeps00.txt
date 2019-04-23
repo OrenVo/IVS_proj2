@@ -25,8 +25,8 @@ Termíny:
 	* 17.4. Doladění problémů, finální revize, mockup
 	* 24.4. Odevzdání finální verze
 	* 2.5. 	Odevzdání problémů
-	* TBA 	Instalace u zákazníka
-	* TBA	Obhajoba projektu
+	* 2.5. 	Instalace u zákazníka
+	* 7. 5.	Obhajoba projektu
 
 ###############################################################################
 
