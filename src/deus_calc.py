@@ -49,7 +49,8 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         self.EqualsBtn.clicked.connect(self.equal)
 
         self.DeusVult.clicked.connect(self.Deus)
-
+    ##
+    # @brief Handling of keyboard button pressed.
     def Keyboard_pressed(self):
         global err
         global ans
@@ -61,7 +62,8 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         newinput = self.Input.text() + self.sender().text()
         self.Input.setText(newinput)
 
-
+    ##
+    # @brief Function delete last character from the input line.
     def bckspace(self):
         global err
         if err == True:
@@ -70,7 +72,8 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             return
         newinput = self.Input.text()
         self.Input.setText(newinput[:-1])
-
+    ##
+    # @brief Function call unary operations from math library.
     def unary_op(self):
         operator = self.sender().text()
         global err
@@ -121,7 +124,8 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             ans = res
             self.Input.setText(str(res))
-
+    ##
+    # @brief Handling arithmetic operations.
     def arithmetic_op(self):
         operator = self.sender().text()
         global err
@@ -152,7 +156,8 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             return
         a = val
         return
-
+    ##
+    # @brief Function run operation.
     def equal(self):
         global err
         global a
@@ -209,11 +214,14 @@ class Deus_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             err = True
             self.Input.setText("ERROR")
 
-
+    ##
+    # @brief Function prints last answer.
     def ansClick(self):
         global ans
         self.Input.setText(str(ans))
 
-        pres = False
+    ##
+    # \cond
     def Deus(self):
         self.Input.setText(str(deus_math_lib.deus_vult()))
+    ##\endcond
